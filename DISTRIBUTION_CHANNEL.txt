@@ -1,0 +1,15 @@
+Official distribution channel update, 2026-11-03
+
+The project owner authorized this new public repository and its Releases:
+https://github.com/yanyanzheng96/VeriWorld-release
+https://github.com/yanyanzheng96/VeriWorld-release/releases
+
+This replaces the earlier Google-Drive-only distribution-channel descriptions
+in the preserved project notices and historical archive documentation. The
+owner's publication of these assets through this channel does not authorize
+third-party redistribution, remove technical protection, or change the
+remaining use and attribution terms. No third-party license is superseded.
+
+Original runtime archives are provided unchanged. Their embedded draft or
+legacy-host notes predate this release; use this repository's download guide
+and the SHA256 manifest for the current download locations and source version.

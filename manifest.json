@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "part_bytes": 1992294400,
+  "archives": {
+    "windows": {
+      "name": "VeriWorld-Windows-parser-v4.zip",
+      "bytes": 4812819136,
+      "sha256": "9820f3bc5d402e94940269fa8b99fa2160a6261e9e2b5d71a37835740e6cbeb0",
+      "parts": [
+        {
+          "name": "VeriWorld-Windows-parser-v4.zip.part001",
+          "bytes": 1992294400,
+          "sha256": "a82118985723d14f8cdacaa8d23c44f7c229c623184aab5dadd95144166871d5"
+        },
+        {
+          "name": "VeriWorld-Windows-parser-v4.zip.part002",
+          "bytes": 1992294400,
+          "sha256": "bf5b397af51bcb00df94415a2f5ec30f3bc56a1aed4b543d4708691db1a2cfbb"
+        },
+        {
+          "name": "VeriWorld-Windows-parser-v4.zip.part003",
+          "bytes": 828230336,
+          "sha256": "1919fa570708c1bca9827347187201324b0ba04826bb8a121f77fcdc51e0fe60"
+        }
+      ],
+      "contents": "Python tasks, supporting data and Windows runtime"
+    },
+    "linux": {
+      "name": "VeriWorld-Linux-x86_64-runtime.tar.gz",
+      "bytes": 4538476263,
+      "sha256": "fdfba92b5ca6432bbecad58b5619d15216b39c89cfd16d3bb1349a1f249b758d",
+      "parts": [
+        {
+          "name": "VeriWorld-Linux-x86_64-runtime.tar.gz.part001",
+          "bytes": 1992294400,
+          "sha256": "c01812bc0abb6283a2606110ee0abe9bf8549a3233b3aa3a77c376e9336acf81"
+        },
+        {
+          "name": "VeriWorld-Linux-x86_64-runtime.tar.gz.part002",
+          "bytes": 1992294400,
+          "sha256": "6d32d5d803430dc4436ae57657bbe6176801989a890f12ce558f010f672c6b99"
+        },
+        {
+          "name": "VeriWorld-Linux-x86_64-runtime.tar.gz.part003",
+          "bytes": 553887463,
+          "sha256": "3e7627192e3bc69bf55fa796262f07c041ffb4eaaa8f8e4f099a39751295833d"
+        }
+      ],
+      "contents": "Linux runtime; Python tasks supplied separately"
+    }
+  },
+  "repository": "yanyanzheng96/VeriWorld-release",
+  "tag": "paper-artifacts-2026-11-03-rc1"
+}
