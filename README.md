@@ -153,18 +153,24 @@ API config or credential. Run directories include task-level `reproduce.json`
 and `reproduce.py` where provided; inspect with `--dry-run` before replaying and
 override runtime/config/output paths for your machine.
 
-The data files are the reviewed numeric supporting export. They are separate
-from the full raw episode archives. Recompute them without GPU or API:
+## Task dataset and separate supporting results
+
+The published dataset consists of test-task definitions, seed/initialization
+fixtures and runtime recipes. [Hugging Face](https://huggingface.co/datasets/yanyanzheng96/VeriWorld)
+provides CSV views of 11 task-family definitions, 90 reference fixtures and 22
+installation commands. `croissant.json` describes these three task record sets.
+See [DATASET_METADATA.md](DATASET_METADATA.md) for record units, provenance,
+binary dependencies and existing license scopes. `release_seed_fixtures.json`
+and `task_entrypoints.json` retain the source task configuration and entry points.
+
+The historical score CSVs and `SUPPORTING_DATA.txt` are separate paper-support
+files, not the task dataset or a complete run archive. They remain unchanged.
+`reproduce_statistics.py` operates on that historical export. To inspect the
+published initialization fixtures without GPU or model API, run:
 
 ```powershell
-.\.venv\Scripts\python.exe reproduce_statistics.py
 .\.venv\Scripts\python.exe validate_release_seeds.py
 ```
-
-The first command writes `reproduced_statistics.json`. Croissant describes nine
-record sets, including the 74 valid but unpaired core episodes. See
-`SUPPORTING_DATA.txt` for denominators and missing-data rules. Raw historical
-paths are not required to recompute these exported statistics.
 
 ## Linux source distribution
 
@@ -226,5 +232,5 @@ The project license and notices are retained in [LICENSE](LICENSE) and
 records the owner-authorized GitHub release channel. Unreal Engine and
 third-party content retain their own terms; the project license does not
 grant ownership of or supersede terms for third-party material.
-Dataset metadata retains its existing license declaration. Use CITATION.cff
-to cite VeriWorld.
+The task metadata describes the existing artifact-specific license scopes;
+it does not grant new rights. See DATASET_METADATA.md. Use CITATION.cff to cite VeriWorld.

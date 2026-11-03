@@ -45,18 +45,9 @@
     "source": "cr:source",
     "subField": "cr:subField",
     "transform": "cr:transform",
-    "equivalentProperty": "cr:equivalentProperty"
+    "equivalentProperty": "cr:equivalentProperty",
+    "prov": "http://www.w3.org/ns/prov#"
   },
-  "@type": "sc:Dataset",
-  "@id": "veriworld",
-  "conformsTo": "http://mlcommons.org/croissant/1.0",
-  "name": "VeriWorld",
-  "description": "VeriWorld is an executable benchmark for spatial reasoning in interactive 3D environments. This metadata describes the task catalogue and the matched evaluation records accompanying the camera-ready paper. Each record identifies its task, information condition, harness, model, seed, terminal success, and source-record hash. The separate Unreal Engine runtime and third-party scene content have their own license terms.",
-  "url": "https://github.com/yanyanzheng96/VeriWorld-release",
-  "version": "1.0.0",
-  "datePublished": "2026-05-06",
-  "dateModified": "2026-11-02",
-  "license": "https://creativecommons.org/publicdomain/zero/1.0/",
   "creator": [
     {
       "@type": "sc:Person",
@@ -114,118 +105,106 @@
     "name": "VeriWorld authors"
   },
   "inLanguage": "en",
-  "isLiveDataset": false,
-  "keywords": [
-    "spatial reasoning",
-    "vision-language models",
-    "interactive 3D environments",
-    "verifiable evaluation",
-    "Unreal Engine 5"
-  ],
   "citeAs": "@inproceedings{veriworld2026, title={{VeriWorld: A Verifiable Visual SWE-Bench for Spatial Reasoning in 3D Environments}}, author={Yan Zheng and ShengYun Peng and Xuyao Liang and Xiaoyan Cong and Nuo Chen and Bangya Liu and Zihan Wang and Wenyan Cong and Zhiwen Fan and Zhangyang Wang}, booktitle={Advances in Neural Information Processing Systems}, year={2026}}",
   "citation": "Yan Zheng; ShengYun Peng; Xuyao Liang; Xiaoyan Cong; Nuo Chen; Bangya Liu; Zihan Wang; Wenyan Cong; Zhiwen Fan; Zhangyang Wang. VeriWorld: A Verifiable Visual SWE-Bench for Spatial Reasoning in 3D Environments. NeurIPS 2026, Evaluations and Datasets Track.",
+  "@type": "sc:Dataset",
+  "@id": "https://huggingface.co/datasets/yanyanzheng96/VeriWorld#tasks",
+  "conformsTo": "http://mlcommons.org/croissant/1.0",
+  "name": "VeriWorld task dataset",
+  "description": "Executable 3D test-task definitions, deterministic seed/parameter fixtures and public CLI recipes for VeriWorld. The dataset is not a collection of model-run results. The separately distributed VeriWorld binary and user-configured model API are required to execute tasks.",
+  "url": "https://huggingface.co/datasets/yanyanzheng96/VeriWorld",
+  "sameAs": "https://github.com/yanyanzheng96/VeriWorld-release",
+  "version": "1.1.0",
+  "datePublished": "2026-05-06",
+  "dateModified": "2026-11-03T20:33:04.924464+00:00",
+  "license": "https://huggingface.co/datasets/yanyanzheng96/VeriWorld/blob/main/LICENSE.md",
+  "isLiveDataset": false,
+  "keywords": [
+    "3D",
+    "spatial reasoning",
+    "executable benchmark",
+    "synthetic tasks",
+    "seed fixtures",
+    "deterministic verification"
+  ],
+  "prov:wasDerivedFrom": [
+    {
+      "@id": "https://huggingface.co/datasets/yanyanzheng96/VeriWorld/resolve/c2e91ddba815b394db165518311d8d092ec2463f/metadata/release_seed_fixtures.json"
+    },
+    {
+      "@id": "https://raw.githubusercontent.com/yanyanzheng96/VeriWorld-release/789103cd64c556febd6937809dddac99fd686064/task_entrypoints.json"
+    }
+  ],
+  "prov:wasGeneratedBy": [
+    {
+      "@type": "prov:Activity",
+      "@id": "https://huggingface.co/datasets/yanyanzheng96/VeriWorld#task-metadata-generation",
+      "name": "Task catalogue and runtime recipe documentation",
+      "description": "Task objectives, verifier metrics and source paths describe the pinned release implementation. Recipes document representative one-round public CLI installation checks; no model outcome is used as a task definition.",
+      "prov:used": [
+        {
+          "@id": "https://github.com/yanyanzheng96/VeriWorld-release/tree/789103cd64c556febd6937809dddac99fd686064"
+        },
+        {
+          "@id": "https://raw.githubusercontent.com/yanyanzheng96/VeriWorld-release/789103cd64c556febd6937809dddac99fd686064/run_task.py"
+        }
+      ]
+    },
+    {
+      "@type": "prov:Activity",
+      "@id": "https://huggingface.co/datasets/yanyanzheng96/VeriWorld#seed-fixture-generation",
+      "name": "Deterministic initialization fixture generation and lossless CSV serialization",
+      "description": "The released generators produce parameter objects from task-specific seeds and configuration. Each fixture retains generator identity, source hash, parameter hash and JSON values. CSV columns preserve these objects as JSON strings. No rendering or model inference is required to read a fixture; model actions are not fixture labels.",
+      "prov:used": [
+        {
+          "@id": "https://huggingface.co/datasets/yanyanzheng96/VeriWorld/resolve/c2e91ddba815b394db165518311d8d092ec2463f/metadata/release_seed_fixtures.json"
+        },
+        {
+          "@id": "https://github.com/yanyanzheng96/VeriWorld-release/tree/789103cd64c556febd6937809dddac99fd686064"
+        }
+      ]
+    }
+  ],
+  "rai:dataCollection": "Synthetic task initialization produced by the versioned VeriWorld generators and documented live UE scenes. The catalogue records executable objectives and runtime metrics. No human subjects or scraped personal data were used to generate task instances.",
+  "rai:dataCollectionTimeframe": "This metadata describes the paper-artifacts-2026-11-03-rc1 source/runtime snapshot. Metadata revision date is not an experiment collection date.",
+  "rai:dataPreprocessingProtocol": "Reference task/seed/generator configurations are serialized to CSV with parameter objects stored as JSON strings and source/parameter SHA256 digests preserved. Runtime recipes are documentation, not trial outcomes. No experimental success/failure records are included in these three record sets.",
+  "rai:dataAnnotationProtocol": "Task objectives and metrics are documented from the released implementation. Reference quantities come from deterministic generators or the live engine state. Execution outcomes are computed by the task verifier; no crowd or model judge labels the fixture dataset.",
+  "rai:dataLimitations": "Eleven task families are documented. Ninety offline fixtures cover eight families; LightWar and photoreal grounding use live runtime/scene configuration. The fixtures are not exhaustive seed coverage. Legacy TunnelNav3D uses fixed construction seed 99 for rendered tunnel waypoints. This synthetic task release does not establish real-world performance, safety, cross-platform score equivalence or universal model API availability.",
+  "rai:dataBiases": "Selected synthetic scenes, geometry, task generators and English instructions constrain the distribution. Asset appearance and task coverage need not represent natural sensors, real-world environments or social spatial reasoning.",
+  "rai:personalSensitiveInformation": "Task records contain synthetic parameters and software instructions, with no human-subject or scraped personal data. Creator identities/contact details describe the public scholarly authorship, not task participants.",
+  "rai:dataUseCases": "Reproduce task initialization, inspect executable verifier definitions, run controlled spatial-reasoning evaluations and test supported model API configurations. The task fixtures alone provide no measured model performance and are not a safety or deployment certification.",
+  "rai:dataSocialImpact": "Reproducible task definitions can improve evaluation transparency. Overgeneralizing synthetic benchmark scores could mislead robotics or embodied-system deployment decisions. Explicit scope, source versions and deterministic verifiers help readers interpret results.",
   "rai:hasSyntheticData": true,
-  "rai:dataCollection": "Instances are generated from task-specific seeds and rendered in Unreal Engine 5. Some scenes use licensed third-party assets. Evaluation records contain model actions and automatic verifier outcomes. No human subjects or scraped personal data are involved.",
-  "rai:dataCollectionType": "Procedural generation, synthetic rendering, and model evaluation.",
-  "rai:dataCollectionMissingData": "API and runtime failures are unscored. Core comparisons use common valid V/S/C seed sets; 74 additional valid unpaired outcomes are retained separately. Partial Photoreal and computational-physics panels retain actual denominators and are excluded from complete-model aggregates.",
-  "rai:dataCollectionRawData": "Task code, generated parameters, rendered observations, action traces, and verifier records are separate artifacts. The tabular records here are derived from terminal episode summaries; source hashes identify the archived summaries.",
-  "rai:dataCollectionTimeframe": "The matched core panels were evaluated from 2026-05-05 through 2026-11-02. Per-record run timestamps are provided.",
-  "rai:dataPreprocessingProtocol": "Deduplicate copies of a run, use the latest terminal record for each task/harness/model/seed for the reported model version, and match V/S/C seed sets within each model. Explicit infrastructure crashes and records without terminal outcomes are excluded. Failed terminal runs are retained.",
-  "rai:dataImputationProtocol": "No missing outcomes are imputed.",
-  "rai:dataManipulationProtocol": "Generators specify the scene and task parameters. Runtime verifiers check agent outcomes. Selected tasks additionally use reachability checks, reference solutions, or simulator checks to test instance solvability.",
-  "rai:dataAnnotationProtocol": "Automatic task-specific verifiers produce the success labels. Billiards uses fraction pocketed and is not included in the binary core-record table.",
-  "rai:dataAnnotationPlatform": "Local benchmark harnesses and deterministic verifiers.",
-  "rai:dataAnnotationAnalysis": "Task-specific thresholds are defined by the corresponding verifier. Comparisons hold the task instance, action interface, and verifier fixed.",
-  "rai:annotationsPerItem": "One terminal outcome per evaluation record.",
-  "rai:annotatorDemographics": "Not applicable; no human annotation.",
-  "rai:machineAnnotationTools": "Python task verifiers; deterministic physics rollouts for computational tasks. Lean 4 is used for selected instance-solvability checks, not as the outcome judge for every task.",
-  "rai:dataReleaseMaintenancePlan": "The public repository is https://github.com/yanyanzheng96/VeriWorld-release. Release snapshots, documentation, and metadata should be versioned together. Generator or verifier changes must identify a new evaluation configuration. The Unreal runtime is distributed separately under its applicable terms.",
-  "rai:personalSensitiveInformation": "No human-subject data or scraped personal data. Model identifiers and public author attribution are included.",
-  "rai:dataSocialImpact": "Supports reproducible diagnosis of spatial reasoning under controlled conditions. Benchmark performance is not a safety or deployment guarantee for robotics or embodied agents.",
-  "rai:dataBiases": "Task families, synthetic rendering, English prompts, and selected API models define the evaluation scope. Performance need not generalize to natural sensors, other task distributions, or later API versions.",
-  "rai:dataLimitations": "The catalogue covers eleven task families. The tabular core records cover four matched V/S/C panels. Other tables and harness studies are documented separately. Model API behavior can change. Synthetic evaluation does not establish real-robot performance.",
-  "rai:dataUseCases": "Evaluation and analysis of spatial reasoning, information conditions, and action harnesses. The metadata license follows the existing dataset declaration and does not grant rights to the separately distributed engine or third-party assets.",
   "distribution": [
     {
       "@type": "cr:FileObject",
       "@id": "data/task_catalog.csv",
       "name": "data/task_catalog.csv",
-      "description": "Camera-ready task catalog.",
-      "contentUrl": "https://raw.githubusercontent.com/yanyanzheng96/VeriWorld-release/paper-artifacts-2026-11-03-rc1/data/task_catalog.csv",
+      "description": "Eleven executable task-family definitions, including objectives, verifier metrics and source paths. Not model-run records.",
+      "contentUrl": "https://huggingface.co/datasets/yanyanzheng96/VeriWorld/resolve/c2e91ddba815b394db165518311d8d092ec2463f/data/task_catalog.csv",
       "encodingFormat": "text/csv",
-      "sha256": "ec30302664ece3c23a618537ab7aa82138ba16ea7165e43c343babb32e0ce995"
+      "sha256": "ec30302664ece3c23a618537ab7aa82138ba16ea7165e43c343babb32e0ce995",
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/"
     },
     {
       "@type": "cr:FileObject",
-      "@id": "data/episode_metrics.csv",
-      "name": "data/episode_metrics.csv",
-      "description": "Camera-ready episode metrics.",
-      "contentUrl": "https://raw.githubusercontent.com/yanyanzheng96/VeriWorld-release/paper-artifacts-2026-11-03-rc1/data/episode_metrics.csv",
+      "@id": "data/seed_fixtures.csv",
+      "name": "data/seed_fixtures.csv",
+      "description": "Ninety reference initialization configurations across eight task families. Parameter JSON includes evaluation-side references, not additional visual-only model input. Not experimental outcomes.",
+      "contentUrl": "https://huggingface.co/datasets/yanyanzheng96/VeriWorld/resolve/c2e91ddba815b394db165518311d8d092ec2463f/data/seed_fixtures.csv",
       "encodingFormat": "text/csv",
-      "sha256": "07647855cbd21d5b0795ad526bc8ecfb911f15dc17ae6e29d0086674491a77aa"
+      "sha256": "8ed0f7c8eb1e5331cf92ec137c609f1665d5f0a5d885346b5f279136b64666b5",
+      "license": "https://github.com/yanyanzheng96/VeriWorld-release/blob/789103cd64c556febd6937809dddac99fd686064/LICENSE"
     },
     {
       "@type": "cr:FileObject",
-      "@id": "data/continuous_metrics.csv",
-      "name": "data/continuous_metrics.csv",
-      "description": "Camera-ready continuous metrics.",
-      "contentUrl": "https://raw.githubusercontent.com/yanyanzheng96/VeriWorld-release/paper-artifacts-2026-11-03-rc1/data/continuous_metrics.csv",
+      "@id": "data/runtime_recipes.csv",
+      "name": "data/runtime_recipes.csv",
+      "description": "Twenty-two example CLI commands spanning eleven task families. These are installation instructions with task-specific interfaces, not independent scenes or scores.",
+      "contentUrl": "https://huggingface.co/datasets/yanyanzheng96/VeriWorld/resolve/c2e91ddba815b394db165518311d8d092ec2463f/data/runtime_recipes.csv",
       "encodingFormat": "text/csv",
-      "sha256": "32a59af49ca01ed7c716f3001a322032739413866b0c46b4fa7b0c0bd9eb7f39"
-    },
-    {
-      "@type": "cr:FileObject",
-      "@id": "data/prompt_and_span_controls.csv",
-      "name": "data/prompt_and_span_controls.csv",
-      "description": "Camera-ready prompt and span controls.",
-      "contentUrl": "https://raw.githubusercontent.com/yanyanzheng96/VeriWorld-release/paper-artifacts-2026-11-03-rc1/data/prompt_and_span_controls.csv",
-      "encodingFormat": "text/csv",
-      "sha256": "7a79bb03fd330ecd357fe5e48b97189ec5de672e3809703d2bf04470cb6a9ca3"
-    },
-    {
-      "@type": "cr:FileObject",
-      "@id": "data/structural_probe.csv",
-      "name": "data/structural_probe.csv",
-      "description": "Camera-ready structural probe.",
-      "contentUrl": "https://raw.githubusercontent.com/yanyanzheng96/VeriWorld-release/paper-artifacts-2026-11-03-rc1/data/structural_probe.csv",
-      "encodingFormat": "text/csv",
-      "sha256": "f07af445757b12933ee39a1e755566026445b2241f5ffcacb4669f43355f3bfd"
-    },
-    {
-      "@type": "cr:FileObject",
-      "@id": "data/ranking_inputs.csv",
-      "name": "data/ranking_inputs.csv",
-      "description": "Camera-ready ranking inputs.",
-      "contentUrl": "https://raw.githubusercontent.com/yanyanzheng96/VeriWorld-release/paper-artifacts-2026-11-03-rc1/data/ranking_inputs.csv",
-      "encodingFormat": "text/csv",
-      "sha256": "093000107f3b67941fdb369289dc187fce2918f6f00f34a16ba24cc2e40bf950"
-    },
-    {
-      "@type": "cr:FileObject",
-      "@id": "data/computational_physics_episodes.csv",
-      "name": "data/computational_physics_episodes.csv",
-      "description": "Verified extended-track computational-physics episode records.",
-      "contentUrl": "https://raw.githubusercontent.com/yanyanzheng96/VeriWorld-release/paper-artifacts-2026-11-03-rc1/data/computational_physics_episodes.csv",
-      "encodingFormat": "text/csv",
-      "sha256": "dbd0c239b7e6683c4526665b71ee22facee49884a71f5b8a261440c0a3b47d2e"
-    },
-    {
-      "@type": "cr:FileObject",
-      "@id": "data/photoreal_episodes.csv",
-      "name": "data/photoreal_episodes.csv",
-      "description": "Verified Photoreal episode records with identity and source provenance.",
-      "contentUrl": "https://raw.githubusercontent.com/yanyanzheng96/VeriWorld-release/paper-artifacts-2026-11-03-rc1/data/photoreal_episodes.csv",
-      "encodingFormat": "text/csv",
-      "sha256": "dc8cb64a535a8e26b7a76ab2c6502adb3fba329c643bdc225962c9bc1a084bc5"
-    },
-    {
-      "@type": "cr:FileObject",
-      "@id": "data/core_unpaired_episodes.csv",
-      "name": "data/core_unpaired_episodes.csv",
-      "description": "Camera-ready episode metrics.",
-      "contentUrl": "https://raw.githubusercontent.com/yanyanzheng96/VeriWorld-release/paper-artifacts-2026-11-03-rc1/data/core_unpaired_episodes.csv",
-      "encodingFormat": "text/csv",
-      "sha256": "f14dd5f8bcae08e8803e91f789f0f638f3977ee142c671e7fa7ca864b3be703b"
+      "sha256": "2afa327ba765155889873900f1bed32d1b2e5b266d8278a801621046dda895c6",
+      "license": "https://github.com/yanyanzheng96/VeriWorld-release/blob/789103cd64c556febd6937809dddac99fd686064/LICENSE"
     }
   ],
   "recordSet": [
@@ -233,13 +212,14 @@
       "@type": "cr:RecordSet",
       "@id": "task_catalog",
       "name": "task_catalog",
-      "description": "Camera-ready supporting data: task catalog. See SUPPORTING_DATA.txt for scope and definitions.",
+      "description": "Eleven executable task-family definitions, including objectives, verifier metrics and source paths. Not model-run records.",
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
       "field": [
         {
           "@type": "cr:Field",
           "@id": "task_catalog/task",
           "name": "task",
-          "description": "task.",
+          "description": "Task-family name; one row describes a task family, not a model run.",
           "dataType": "sc:Text",
           "source": {
             "fileObject": {
@@ -254,7 +234,7 @@
           "@type": "cr:Field",
           "@id": "task_catalog/family",
           "name": "family",
-          "description": "family.",
+          "description": "Task category in the released benchmark.",
           "dataType": "sc:Text",
           "source": {
             "fileObject": {
@@ -269,7 +249,7 @@
           "@type": "cr:Field",
           "@id": "task_catalog/objective",
           "name": "objective",
-          "description": "objective.",
+          "description": "Objective of an executable task instance.",
           "dataType": "sc:Text",
           "source": {
             "fileObject": {
@@ -284,7 +264,7 @@
           "@type": "cr:Field",
           "@id": "task_catalog/metric",
           "name": "metric",
-          "description": "metric.",
+          "description": "Runtime verifier or task outcome metric; this field is a definition, not a measured score.",
           "dataType": "sc:Text",
           "source": {
             "fileObject": {
@@ -299,7 +279,7 @@
           "@type": "cr:Field",
           "@id": "task_catalog/code_path",
           "name": "code_path",
-          "description": "code path.",
+          "description": "Repository-relative implementation directory at the pinned source revision.",
           "dataType": "sc:Text",
           "source": {
             "fileObject": {
@@ -314,34 +294,35 @@
     },
     {
       "@type": "cr:RecordSet",
-      "@id": "episode_metrics",
-      "name": "episode_metrics",
-      "description": "Camera-ready supporting data: episode metrics. See SUPPORTING_DATA.txt for scope and definitions.",
+      "@id": "seed_fixtures",
+      "name": "seed_fixtures",
+      "description": "Ninety reference initialization configurations across eight task families. Parameter JSON includes evaluation-side references, not additional visual-only model input. Not experimental outcomes.",
+      "license": "https://github.com/yanyanzheng96/VeriWorld-release/blob/789103cd64c556febd6937809dddac99fd686064/LICENSE",
       "field": [
         {
           "@type": "cr:Field",
-          "@id": "episode_metrics/record_id",
-          "name": "record_id",
-          "description": "record id.",
+          "@id": "seed_fixtures/fixture_id",
+          "name": "fixture_id",
+          "description": "Identifier for a reference generator configuration.",
           "dataType": "sc:Text",
           "source": {
             "fileObject": {
-              "@id": "data/episode_metrics.csv"
+              "@id": "data/seed_fixtures.csv"
             },
             "extract": {
-              "column": "record_id"
+              "column": "fixture_id"
             }
           }
         },
         {
           "@type": "cr:Field",
-          "@id": "episode_metrics/task",
+          "@id": "seed_fixtures/task",
           "name": "task",
-          "description": "task.",
+          "description": "Task-family name.",
           "dataType": "sc:Text",
           "source": {
             "fileObject": {
-              "@id": "data/episode_metrics.csv"
+              "@id": "data/seed_fixtures.csv"
             },
             "extract": {
               "column": "task"
@@ -350,58 +331,13 @@
         },
         {
           "@type": "cr:Field",
-          "@id": "episode_metrics/harness",
-          "name": "harness",
-          "description": "harness.",
-          "dataType": "sc:Text",
-          "source": {
-            "fileObject": {
-              "@id": "data/episode_metrics.csv"
-            },
-            "extract": {
-              "column": "harness"
-            }
-          }
-        },
-        {
-          "@type": "cr:Field",
-          "@id": "episode_metrics/condition",
-          "name": "condition",
-          "description": "condition.",
-          "dataType": "sc:Text",
-          "source": {
-            "fileObject": {
-              "@id": "data/episode_metrics.csv"
-            },
-            "extract": {
-              "column": "condition"
-            }
-          }
-        },
-        {
-          "@type": "cr:Field",
-          "@id": "episode_metrics/model",
-          "name": "model",
-          "description": "model.",
-          "dataType": "sc:Text",
-          "source": {
-            "fileObject": {
-              "@id": "data/episode_metrics.csv"
-            },
-            "extract": {
-              "column": "model"
-            }
-          }
-        },
-        {
-          "@type": "cr:Field",
-          "@id": "episode_metrics/seed",
+          "@id": "seed_fixtures/seed",
           "name": "seed",
-          "description": "seed.",
+          "description": "Generator seed within this task and generator configuration. Equal seeds across tasks do not identify equal scenes; see the TunnelNav3D exception.",
           "dataType": "sc:Integer",
           "source": {
             "fileObject": {
-              "@id": "data/episode_metrics.csv"
+              "@id": "data/seed_fixtures.csv"
             },
             "extract": {
               "column": "seed"
@@ -410,61 +346,121 @@
         },
         {
           "@type": "cr:Field",
-          "@id": "episode_metrics/success",
-          "name": "success",
-          "description": "success.",
-          "dataType": "sc:Integer",
-          "source": {
-            "fileObject": {
-              "@id": "data/episode_metrics.csv"
-            },
-            "extract": {
-              "column": "success"
-            }
-          }
-        },
-        {
-          "@type": "cr:Field",
-          "@id": "episode_metrics/rounds",
-          "name": "rounds",
-          "description": "rounds.",
-          "dataType": "sc:Integer",
-          "source": {
-            "fileObject": {
-              "@id": "data/episode_metrics.csv"
-            },
-            "extract": {
-              "column": "rounds"
-            }
-          }
-        },
-        {
-          "@type": "cr:Field",
-          "@id": "episode_metrics/run_timestamp",
-          "name": "run_timestamp",
-          "description": "run timestamp.",
+          "@id": "seed_fixtures/generator",
+          "name": "generator",
+          "description": "Python module providing the deterministic parameter generator.",
           "dataType": "sc:Text",
           "source": {
             "fileObject": {
-              "@id": "data/episode_metrics.csv"
+              "@id": "data/seed_fixtures.csv"
             },
             "extract": {
-              "column": "run_timestamp"
+              "column": "generator"
             }
           }
         },
         {
           "@type": "cr:Field",
-          "@id": "episode_metrics/source_sha256",
-          "name": "source_sha256",
-          "description": "source sha256.",
+          "@id": "seed_fixtures/generator_config_json",
+          "name": "generator_config_json",
+          "description": "JSON-encoded generator options; decode with json.loads before use.",
           "dataType": "sc:Text",
           "source": {
             "fileObject": {
-              "@id": "data/episode_metrics.csv"
+              "@id": "data/seed_fixtures.csv"
             },
             "extract": {
-              "column": "source_sha256"
+              "column": "generator_config_json"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "seed_fixtures/parameters_json",
+          "name": "parameters_json",
+          "description": "JSON-encoded task initialization and evaluation-side reference parameters. The harness controls which fields are exposed to the model.",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "data/seed_fixtures.csv"
+            },
+            "extract": {
+              "column": "parameters_json"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "seed_fixtures/parameters_sha256",
+          "name": "parameters_sha256",
+          "description": "SHA256 of the canonical serialized parameter object in the source fixture.",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "data/seed_fixtures.csv"
+            },
+            "extract": {
+              "column": "parameters_sha256"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "seed_fixtures/generator_sha256",
+          "name": "generator_sha256",
+          "description": "SHA256 of the generator source used for this fixture.",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "data/seed_fixtures.csv"
+            },
+            "extract": {
+              "column": "generator_sha256"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "seed_fixtures/deterministic",
+          "name": "deterministic",
+          "description": "Whether this recorded parameter generation is deterministic; not a guarantee of repeatable model API responses.",
+          "dataType": "sc:Boolean",
+          "source": {
+            "fileObject": {
+              "@id": "data/seed_fixtures.csv"
+            },
+            "extract": {
+              "column": "deterministic"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "seed_fixtures/source_revision",
+          "name": "source_revision",
+          "description": "Source release identifying the generator and task implementation.",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "data/seed_fixtures.csv"
+            },
+            "extract": {
+              "column": "source_revision"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "seed_fixtures/record_type",
+          "name": "record_type",
+          "description": "Fixture category; these rows are not model-response or benchmark-result records.",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "data/seed_fixtures.csv"
+            },
+            "extract": {
+              "column": "record_type"
             }
           }
         }
@@ -472,34 +468,35 @@
     },
     {
       "@type": "cr:RecordSet",
-      "@id": "continuous_metrics",
-      "name": "continuous_metrics",
-      "description": "Camera-ready supporting data: continuous metrics. See SUPPORTING_DATA.txt for scope and definitions.",
+      "@id": "runtime_recipes",
+      "name": "runtime_recipes",
+      "description": "Twenty-two example CLI commands spanning eleven task families. These are installation instructions with task-specific interfaces, not independent scenes or scores.",
+      "license": "https://github.com/yanyanzheng96/VeriWorld-release/blob/789103cd64c556febd6937809dddac99fd686064/LICENSE",
       "field": [
         {
           "@type": "cr:Field",
-          "@id": "continuous_metrics/record_id",
-          "name": "record_id",
-          "description": "record id.",
+          "@id": "runtime_recipes/recipe_id",
+          "name": "recipe_id",
+          "description": "Identifier for a representative installation-check command.",
           "dataType": "sc:Text",
           "source": {
             "fileObject": {
-              "@id": "data/continuous_metrics.csv"
+              "@id": "data/runtime_recipes.csv"
             },
             "extract": {
-              "column": "record_id"
+              "column": "recipe_id"
             }
           }
         },
         {
           "@type": "cr:Field",
-          "@id": "continuous_metrics/task",
+          "@id": "runtime_recipes/task",
           "name": "task",
-          "description": "task.",
+          "description": "Task-family name.",
           "dataType": "sc:Text",
           "source": {
             "fileObject": {
-              "@id": "data/continuous_metrics.csv"
+              "@id": "data/runtime_recipes.csv"
             },
             "extract": {
               "column": "task"
@@ -508,43 +505,13 @@
         },
         {
           "@type": "cr:Field",
-          "@id": "continuous_metrics/condition",
-          "name": "condition",
-          "description": "condition.",
-          "dataType": "sc:Text",
-          "source": {
-            "fileObject": {
-              "@id": "data/continuous_metrics.csv"
-            },
-            "extract": {
-              "column": "condition"
-            }
-          }
-        },
-        {
-          "@type": "cr:Field",
-          "@id": "continuous_metrics/model",
-          "name": "model",
-          "description": "model.",
-          "dataType": "sc:Text",
-          "source": {
-            "fileObject": {
-              "@id": "data/continuous_metrics.csv"
-            },
-            "extract": {
-              "column": "model"
-            }
-          }
-        },
-        {
-          "@type": "cr:Field",
-          "@id": "continuous_metrics/seed",
+          "@id": "runtime_recipes/seed",
           "name": "seed",
-          "description": "seed.",
+          "description": "Seed passed to the task CLI, with task-specific initialization semantics.",
           "dataType": "sc:Integer",
           "source": {
             "fileObject": {
-              "@id": "data/continuous_metrics.csv"
+              "@id": "data/runtime_recipes.csv"
             },
             "extract": {
               "column": "seed"
@@ -553,1069 +520,106 @@
         },
         {
           "@type": "cr:Field",
-          "@id": "continuous_metrics/success",
-          "name": "success",
-          "description": "success.",
-          "dataType": "sc:Integer",
-          "source": {
-            "fileObject": {
-              "@id": "data/continuous_metrics.csv"
-            },
-            "extract": {
-              "column": "success"
-            }
-          }
-        },
-        {
-          "@type": "cr:Field",
-          "@id": "continuous_metrics/rounds",
-          "name": "rounds",
-          "description": "rounds.",
-          "dataType": "sc:Integer",
-          "source": {
-            "fileObject": {
-              "@id": "data/continuous_metrics.csv"
-            },
-            "extract": {
-              "column": "rounds"
-            }
-          }
-        },
-        {
-          "@type": "cr:Field",
-          "@id": "continuous_metrics/error_cm",
-          "name": "error_cm",
-          "description": "error cm.",
-          "dataType": "sc:Float",
-          "source": {
-            "fileObject": {
-              "@id": "data/continuous_metrics.csv"
-            },
-            "extract": {
-              "column": "error_cm"
-            }
-          }
-        },
-        {
-          "@type": "cr:Field",
-          "@id": "continuous_metrics/faces_correct_fraction",
-          "name": "faces_correct_fraction",
-          "description": "faces correct fraction.",
-          "dataType": "sc:Float",
-          "source": {
-            "fileObject": {
-              "@id": "data/continuous_metrics.csv"
-            },
-            "extract": {
-              "column": "faces_correct_fraction"
-            }
-          }
-        }
-      ]
-    },
-    {
-      "@type": "cr:RecordSet",
-      "@id": "prompt_and_span_controls",
-      "name": "prompt_and_span_controls",
-      "description": "Camera-ready supporting data: prompt and span controls. See SUPPORTING_DATA.txt for scope and definitions.",
-      "field": [
-        {
-          "@type": "cr:Field",
-          "@id": "prompt_and_span_controls/task",
-          "name": "task",
-          "description": "task.",
+          "@id": "runtime_recipes/information_condition",
+          "name": "information_condition",
+          "description": "Information interface used by this example; VP and RP are not relabeled V/S/C.",
           "dataType": "sc:Text",
           "source": {
             "fileObject": {
-              "@id": "data/prompt_and_span_controls.csv"
+              "@id": "data/runtime_recipes.csv"
             },
             "extract": {
-              "column": "task"
+              "column": "information_condition"
             }
           }
         },
         {
           "@type": "cr:Field",
-          "@id": "prompt_and_span_controls/harness",
-          "name": "harness",
-          "description": "harness.",
+          "@id": "runtime_recipes/command",
+          "name": "command",
+          "description": "Example public CLI invocation. Configure your own model route and runtime; --smoke uses an installation-check budget.",
           "dataType": "sc:Text",
           "source": {
             "fileObject": {
-              "@id": "data/prompt_and_span_controls.csv"
+              "@id": "data/runtime_recipes.csv"
             },
             "extract": {
-              "column": "harness"
+              "column": "command"
             }
           }
         },
         {
           "@type": "cr:Field",
-          "@id": "prompt_and_span_controls/model",
-          "name": "model",
-          "description": "model.",
+          "@id": "runtime_recipes/source_url",
+          "name": "source_url",
+          "description": "Versioned task source location.",
           "dataType": "sc:Text",
           "source": {
             "fileObject": {
-              "@id": "data/prompt_and_span_controls.csv"
+              "@id": "data/runtime_recipes.csv"
             },
             "extract": {
-              "column": "model"
+              "column": "source_url"
             }
           }
         },
         {
           "@type": "cr:Field",
-          "@id": "prompt_and_span_controls/seed",
-          "name": "seed",
-          "description": "seed.",
-          "dataType": "sc:Integer",
-          "source": {
-            "fileObject": {
-              "@id": "data/prompt_and_span_controls.csv"
-            },
-            "extract": {
-              "column": "seed"
-            }
-          }
-        },
-        {
-          "@type": "cr:Field",
-          "@id": "prompt_and_span_controls/success",
-          "name": "success",
-          "description": "success.",
-          "dataType": "sc:Integer",
-          "source": {
-            "fileObject": {
-              "@id": "data/prompt_and_span_controls.csv"
-            },
-            "extract": {
-              "column": "success"
-            }
-          }
-        },
-        {
-          "@type": "cr:Field",
-          "@id": "prompt_and_span_controls/run_timestamp",
-          "name": "run_timestamp",
-          "description": "run timestamp.",
+          "@id": "runtime_recipes/runtime_release_url",
+          "name": "runtime_release_url",
+          "description": "Release containing the required Windows/Linux runtime and checksum/download instructions.",
           "dataType": "sc:Text",
           "source": {
             "fileObject": {
-              "@id": "data/prompt_and_span_controls.csv"
+              "@id": "data/runtime_recipes.csv"
             },
             "extract": {
-              "column": "run_timestamp"
+              "column": "runtime_release_url"
             }
           }
         },
         {
           "@type": "cr:Field",
-          "@id": "prompt_and_span_controls/source_sha256",
-          "name": "source_sha256",
-          "description": "source sha256.",
+          "@id": "runtime_recipes/purpose",
+          "name": "purpose",
+          "description": "Purpose of the command, not a benchmark outcome.",
           "dataType": "sc:Text",
           "source": {
             "fileObject": {
-              "@id": "data/prompt_and_span_controls.csv"
+              "@id": "data/runtime_recipes.csv"
             },
             "extract": {
-              "column": "source_sha256"
+              "column": "purpose"
             }
           }
         },
         {
           "@type": "cr:Field",
-          "@id": "prompt_and_span_controls/max_rounds",
-          "name": "max_rounds",
-          "description": "Recorded maximum model rounds for this episode.",
-          "dataType": "sc:Integer",
-          "source": {
-            "fileObject": {
-              "@id": "data/prompt_and_span_controls.csv"
-            },
-            "extract": {
-              "column": "max_rounds"
-            }
-          }
-        },
-        {
-          "@type": "cr:Field",
-          "@id": "prompt_and_span_controls/max_total_actions",
-          "name": "max_total_actions",
-          "description": "Recorded total primitive-action budget for batch runs; empty for single-command runs.",
-          "dataType": "sc:Integer",
-          "source": {
-            "fileObject": {
-              "@id": "data/prompt_and_span_controls.csv"
-            },
-            "extract": {
-              "column": "max_total_actions"
-            }
-          }
-        },
-        {
-          "@type": "cr:Field",
-          "@id": "prompt_and_span_controls/batch_cap",
-          "name": "batch_cap",
-          "description": "Maximum actions in a batch; empty for single-command runs.",
-          "dataType": "sc:Integer",
-          "source": {
-            "fileObject": {
-              "@id": "data/prompt_and_span_controls.csv"
-            },
-            "extract": {
-              "column": "batch_cap"
-            }
-          }
-        },
-        {
-          "@type": "cr:Field",
-          "@id": "prompt_and_span_controls/pad_words",
-          "name": "pad_words",
-          "description": "Recorded filler word count, checked against the archived run label and observation metadata when present; empty outside padding variants.",
-          "dataType": "sc:Integer",
-          "source": {
-            "fileObject": {
-              "@id": "data/prompt_and_span_controls.csv"
-            },
-            "extract": {
-              "column": "pad_words"
-            }
-          }
-        }
-      ]
-    },
-    {
-      "@type": "cr:RecordSet",
-      "@id": "structural_probe",
-      "name": "structural_probe",
-      "description": "Explicit first-round anchor declarations from the complete-model visual grid Photoreal panel. Missing declarations are excluded only from this probe denominator.",
-      "field": [
-        {
-          "@type": "cr:Field",
-          "@id": "structural_probe/model",
-          "name": "model",
-          "description": "model.",
+          "@id": "runtime_recipes/notes",
+          "name": "notes",
+          "description": "Task-specific setup and interpretation notes.",
           "dataType": "sc:Text",
           "source": {
             "fileObject": {
-              "@id": "data/structural_probe.csv"
+              "@id": "data/runtime_recipes.csv"
             },
             "extract": {
-              "column": "model"
+              "column": "notes"
             }
           }
         },
         {
           "@type": "cr:Field",
-          "@id": "structural_probe/run_id",
-          "name": "run_id",
-          "description": "run id.",
+          "@id": "runtime_recipes/source_revision",
+          "name": "source_revision",
+          "description": "Source release for the command.",
           "dataType": "sc:Text",
           "source": {
             "fileObject": {
-              "@id": "data/structural_probe.csv"
+              "@id": "data/runtime_recipes.csv"
             },
             "extract": {
-              "column": "run_id"
-            }
-          }
-        },
-        {
-          "@type": "cr:Field",
-          "@id": "structural_probe/declared_idx",
-          "name": "declared_idx",
-          "description": "declared idx.",
-          "dataType": "sc:Integer",
-          "source": {
-            "fileObject": {
-              "@id": "data/structural_probe.csv"
-            },
-            "extract": {
-              "column": "declared_idx"
-            }
-          }
-        },
-        {
-          "@type": "cr:Field",
-          "@id": "structural_probe/nearest_indices",
-          "name": "nearest_indices",
-          "description": "nearest indices.",
-          "dataType": "sc:Text",
-          "source": {
-            "fileObject": {
-              "@id": "data/structural_probe.csv"
-            },
-            "extract": {
-              "column": "nearest_indices"
-            }
-          }
-        },
-        {
-          "@type": "cr:Field",
-          "@id": "structural_probe/correct",
-          "name": "correct",
-          "description": "correct.",
-          "dataType": "sc:Integer",
-          "source": {
-            "fileObject": {
-              "@id": "data/structural_probe.csv"
-            },
-            "extract": {
-              "column": "correct"
-            }
-          }
-        },
-        {
-          "@type": "cr:Field",
-          "@id": "structural_probe/success",
-          "name": "success",
-          "description": "success.",
-          "dataType": "sc:Integer",
-          "source": {
-            "fileObject": {
-              "@id": "data/structural_probe.csv"
-            },
-            "extract": {
-              "column": "success"
-            }
-          }
-        },
-        {
-          "@type": "cr:Field",
-          "@id": "structural_probe/source_sha256",
-          "name": "source_sha256",
-          "description": "source sha256.",
-          "dataType": "sc:Text",
-          "source": {
-            "fileObject": {
-              "@id": "data/structural_probe.csv"
-            },
-            "extract": {
-              "column": "source_sha256"
-            }
-          }
-        }
-      ]
-    },
-    {
-      "@type": "cr:RecordSet",
-      "@id": "ranking_inputs",
-      "name": "ranking_inputs",
-      "description": "Reported Billiards and maze rates, and exact complete-panel ObjectGrounding success fractions used for five Kendall tau-b comparisons.",
-      "field": [
-        {
-          "@type": "cr:Field",
-          "@id": "ranking_inputs/comparison",
-          "name": "comparison",
-          "description": "comparison.",
-          "dataType": "sc:Text",
-          "source": {
-            "fileObject": {
-              "@id": "data/ranking_inputs.csv"
-            },
-            "extract": {
-              "column": "comparison"
-            }
-          }
-        },
-        {
-          "@type": "cr:Field",
-          "@id": "ranking_inputs/model",
-          "name": "model",
-          "description": "model.",
-          "dataType": "sc:Text",
-          "source": {
-            "fileObject": {
-              "@id": "data/ranking_inputs.csv"
-            },
-            "extract": {
-              "column": "model"
-            }
-          }
-        },
-        {
-          "@type": "cr:Field",
-          "@id": "ranking_inputs/score_a",
-          "name": "score_a",
-          "description": "score a.",
-          "dataType": "sc:Float",
-          "source": {
-            "fileObject": {
-              "@id": "data/ranking_inputs.csv"
-            },
-            "extract": {
-              "column": "score_a"
-            }
-          }
-        },
-        {
-          "@type": "cr:Field",
-          "@id": "ranking_inputs/score_b",
-          "name": "score_b",
-          "description": "score b.",
-          "dataType": "sc:Float",
-          "source": {
-            "fileObject": {
-              "@id": "data/ranking_inputs.csv"
-            },
-            "extract": {
-              "column": "score_b"
-            }
-          }
-        }
-      ]
-    },
-    {
-      "@type": "cr:RecordSet",
-      "@id": "computational_physics_episodes",
-      "name": "computational_physics_episodes",
-      "description": "185 valid terminal episodes: ten complete model panels of 18 episodes and five partial Kimi episodes. Three seeds per task. Feedback-policy variants are explicit; API outages are unscored. See SUPPORTING_DATA.txt.",
-      "field": [
-        {
-          "@type": "cr:Field",
-          "@id": "computational_physics_episodes/task",
-          "name": "task",
-          "description": "task.",
-          "dataType": "sc:Text",
-          "source": {
-            "fileObject": {
-              "@id": "data/computational_physics_episodes.csv"
-            },
-            "extract": {
-              "column": "task"
-            }
-          }
-        },
-        {
-          "@type": "cr:Field",
-          "@id": "computational_physics_episodes/model",
-          "name": "model",
-          "description": "model.",
-          "dataType": "sc:Text",
-          "source": {
-            "fileObject": {
-              "@id": "data/computational_physics_episodes.csv"
-            },
-            "extract": {
-              "column": "model"
-            }
-          }
-        },
-        {
-          "@type": "cr:Field",
-          "@id": "computational_physics_episodes/condition",
-          "name": "condition",
-          "description": "condition.",
-          "dataType": "sc:Text",
-          "source": {
-            "fileObject": {
-              "@id": "data/computational_physics_episodes.csv"
-            },
-            "extract": {
-              "column": "condition"
-            }
-          }
-        },
-        {
-          "@type": "cr:Field",
-          "@id": "computational_physics_episodes/seed",
-          "name": "seed",
-          "description": "seed.",
-          "dataType": "sc:Integer",
-          "source": {
-            "fileObject": {
-              "@id": "data/computational_physics_episodes.csv"
-            },
-            "extract": {
-              "column": "seed"
-            }
-          }
-        },
-        {
-          "@type": "cr:Field",
-          "@id": "computational_physics_episodes/success",
-          "name": "success",
-          "description": "success.",
-          "dataType": "sc:Integer",
-          "source": {
-            "fileObject": {
-              "@id": "data/computational_physics_episodes.csv"
-            },
-            "extract": {
-              "column": "success"
-            }
-          }
-        },
-        {
-          "@type": "cr:Field",
-          "@id": "computational_physics_episodes/rounds",
-          "name": "rounds",
-          "description": "rounds.",
-          "dataType": "sc:Integer",
-          "source": {
-            "fileObject": {
-              "@id": "data/computational_physics_episodes.csv"
-            },
-            "extract": {
-              "column": "rounds"
-            }
-          }
-        },
-        {
-          "@type": "cr:Field",
-          "@id": "computational_physics_episodes/max_rounds",
-          "name": "max_rounds",
-          "description": "max rounds.",
-          "dataType": "sc:Integer",
-          "source": {
-            "fileObject": {
-              "@id": "data/computational_physics_episodes.csv"
-            },
-            "extract": {
-              "column": "max_rounds"
-            }
-          }
-        },
-        {
-          "@type": "cr:Field",
-          "@id": "computational_physics_episodes/invalid_action_rounds",
-          "name": "invalid_action_rounds",
-          "description": "invalid action rounds.",
-          "dataType": "sc:Integer",
-          "source": {
-            "fileObject": {
-              "@id": "data/computational_physics_episodes.csv"
-            },
-            "extract": {
-              "column": "invalid_action_rounds"
-            }
-          }
-        },
-        {
-          "@type": "cr:Field",
-          "@id": "computational_physics_episodes/harness_version",
-          "name": "harness_version",
-          "description": "harness version.",
-          "dataType": "sc:Text",
-          "source": {
-            "fileObject": {
-              "@id": "data/computational_physics_episodes.csv"
-            },
-            "extract": {
-              "column": "harness_version"
-            }
-          }
-        },
-        {
-          "@type": "cr:Field",
-          "@id": "computational_physics_episodes/feedback_policy",
-          "name": "feedback_policy",
-          "description": "feedback policy.",
-          "dataType": "sc:Text",
-          "source": {
-            "fileObject": {
-              "@id": "data/computational_physics_episodes.csv"
-            },
-            "extract": {
-              "column": "feedback_policy"
-            }
-          }
-        },
-        {
-          "@type": "cr:Field",
-          "@id": "computational_physics_episodes/finished_utc",
-          "name": "finished_utc",
-          "description": "finished utc.",
-          "dataType": "sc:Text",
-          "source": {
-            "fileObject": {
-              "@id": "data/computational_physics_episodes.csv"
-            },
-            "extract": {
-              "column": "finished_utc"
-            }
-          }
-        },
-        {
-          "@type": "cr:Field",
-          "@id": "computational_physics_episodes/source_archive_sha256",
-          "name": "source_archive_sha256",
-          "description": "source archive sha256.",
-          "dataType": "sc:Text",
-          "source": {
-            "fileObject": {
-              "@id": "data/computational_physics_episodes.csv"
-            },
-            "extract": {
-              "column": "source_archive_sha256"
-            }
-          }
-        },
-        {
-          "@type": "cr:Field",
-          "@id": "computational_physics_episodes/source_record_sha256",
-          "name": "source_record_sha256",
-          "description": "source record sha256.",
-          "dataType": "sc:Text",
-          "source": {
-            "fileObject": {
-              "@id": "data/computational_physics_episodes.csv"
-            },
-            "extract": {
-              "column": "source_record_sha256"
-            }
-          }
-        },
-        {
-          "@type": "cr:Field",
-          "@id": "computational_physics_episodes/source_record_path",
-          "name": "source_record_path",
-          "description": "source record path.",
-          "dataType": "sc:Text",
-          "source": {
-            "fileObject": {
-              "@id": "data/computational_physics_episodes.csv"
-            },
-            "extract": {
-              "column": "source_record_path"
-            }
-          }
-        }
-      ]
-    },
-    {
-      "@type": "cr:RecordSet",
-      "@id": "photoreal_episodes",
-      "name": "photoreal_episodes",
-      "description": "946 valid scored Photoreal episodes. All retained PASS and FAIL outcomes included. Complete-model comparisons use 6 models with 140 cells each; other models remain partial. API outages are unscored. See SUPPORTING_DATA.txt.",
-      "field": [
-        {
-          "@type": "cr:Field",
-          "@id": "photoreal_episodes/cell_id",
-          "name": "cell_id",
-          "description": "cell id.",
-          "dataType": "sc:Text",
-          "source": {
-            "fileObject": {
-              "@id": "data/photoreal_episodes.csv"
-            },
-            "extract": {
-              "column": "cell_id"
-            }
-          }
-        },
-        {
-          "@type": "cr:Field",
-          "@id": "photoreal_episodes/task",
-          "name": "task",
-          "description": "task.",
-          "dataType": "sc:Text",
-          "source": {
-            "fileObject": {
-              "@id": "data/photoreal_episodes.csv"
-            },
-            "extract": {
-              "column": "task"
-            }
-          }
-        },
-        {
-          "@type": "cr:Field",
-          "@id": "photoreal_episodes/model",
-          "name": "model",
-          "description": "model.",
-          "dataType": "sc:Text",
-          "source": {
-            "fileObject": {
-              "@id": "data/photoreal_episodes.csv"
-            },
-            "extract": {
-              "column": "model"
-            }
-          }
-        },
-        {
-          "@type": "cr:Field",
-          "@id": "photoreal_episodes/recorded_model",
-          "name": "recorded_model",
-          "description": "recorded model.",
-          "dataType": "sc:Text",
-          "source": {
-            "fileObject": {
-              "@id": "data/photoreal_episodes.csv"
-            },
-            "extract": {
-              "column": "recorded_model"
-            }
-          }
-        },
-        {
-          "@type": "cr:Field",
-          "@id": "photoreal_episodes/identity_basis",
-          "name": "identity_basis",
-          "description": "identity basis.",
-          "dataType": "sc:Text",
-          "source": {
-            "fileObject": {
-              "@id": "data/photoreal_episodes.csv"
-            },
-            "extract": {
-              "column": "identity_basis"
-            }
-          }
-        },
-        {
-          "@type": "cr:Field",
-          "@id": "photoreal_episodes/condition",
-          "name": "condition",
-          "description": "condition.",
-          "dataType": "sc:Text",
-          "source": {
-            "fileObject": {
-              "@id": "data/photoreal_episodes.csv"
-            },
-            "extract": {
-              "column": "condition"
-            }
-          }
-        },
-        {
-          "@type": "cr:Field",
-          "@id": "photoreal_episodes/harness",
-          "name": "harness",
-          "description": "harness.",
-          "dataType": "sc:Text",
-          "source": {
-            "fileObject": {
-              "@id": "data/photoreal_episodes.csv"
-            },
-            "extract": {
-              "column": "harness"
-            }
-          }
-        },
-        {
-          "@type": "cr:Field",
-          "@id": "photoreal_episodes/seed",
-          "name": "seed",
-          "description": "seed.",
-          "dataType": "sc:Integer",
-          "source": {
-            "fileObject": {
-              "@id": "data/photoreal_episodes.csv"
-            },
-            "extract": {
-              "column": "seed"
-            }
-          }
-        },
-        {
-          "@type": "cr:Field",
-          "@id": "photoreal_episodes/target",
-          "name": "target",
-          "description": "target.",
-          "dataType": "sc:Text",
-          "source": {
-            "fileObject": {
-              "@id": "data/photoreal_episodes.csv"
-            },
-            "extract": {
-              "column": "target"
-            }
-          }
-        },
-        {
-          "@type": "cr:Field",
-          "@id": "photoreal_episodes/max_rounds",
-          "name": "max_rounds",
-          "description": "max rounds.",
-          "dataType": "sc:Integer",
-          "source": {
-            "fileObject": {
-              "@id": "data/photoreal_episodes.csv"
-            },
-            "extract": {
-              "column": "max_rounds"
-            }
-          }
-        },
-        {
-          "@type": "cr:Field",
-          "@id": "photoreal_episodes/rounds",
-          "name": "rounds",
-          "description": "rounds.",
-          "dataType": "sc:Integer",
-          "source": {
-            "fileObject": {
-              "@id": "data/photoreal_episodes.csv"
-            },
-            "extract": {
-              "column": "rounds"
-            }
-          }
-        },
-        {
-          "@type": "cr:Field",
-          "@id": "photoreal_episodes/success",
-          "name": "success",
-          "description": "success.",
-          "dataType": "sc:Integer",
-          "source": {
-            "fileObject": {
-              "@id": "data/photoreal_episodes.csv"
-            },
-            "extract": {
-              "column": "success"
-            }
-          }
-        },
-        {
-          "@type": "cr:Field",
-          "@id": "photoreal_episodes/tolerance_cm",
-          "name": "tolerance_cm",
-          "description": "tolerance cm.",
-          "dataType": "sc:Float",
-          "source": {
-            "fileObject": {
-              "@id": "data/photoreal_episodes.csv"
-            },
-            "extract": {
-              "column": "tolerance_cm"
-            }
-          }
-        },
-        {
-          "@type": "cr:Field",
-          "@id": "photoreal_episodes/tolerance_xy_cm",
-          "name": "tolerance_xy_cm",
-          "description": "tolerance xy cm.",
-          "dataType": "sc:Float",
-          "source": {
-            "fileObject": {
-              "@id": "data/photoreal_episodes.csv"
-            },
-            "extract": {
-              "column": "tolerance_xy_cm"
-            }
-          }
-        },
-        {
-          "@type": "cr:Field",
-          "@id": "photoreal_episodes/tolerance_yaw_deg",
-          "name": "tolerance_yaw_deg",
-          "description": "tolerance yaw deg.",
-          "dataType": "sc:Float",
-          "source": {
-            "fileObject": {
-              "@id": "data/photoreal_episodes.csv"
-            },
-            "extract": {
-              "column": "tolerance_yaw_deg"
-            }
-          }
-        },
-        {
-          "@type": "cr:Field",
-          "@id": "photoreal_episodes/run_timestamp",
-          "name": "run_timestamp",
-          "description": "run timestamp.",
-          "dataType": "sc:Text",
-          "source": {
-            "fileObject": {
-              "@id": "data/photoreal_episodes.csv"
-            },
-            "extract": {
-              "column": "run_timestamp"
-            }
-          }
-        },
-        {
-          "@type": "cr:Field",
-          "@id": "photoreal_episodes/source_sha256",
-          "name": "source_sha256",
-          "description": "source sha256.",
-          "dataType": "sc:Text",
-          "source": {
-            "fileObject": {
-              "@id": "data/photoreal_episodes.csv"
-            },
-            "extract": {
-              "column": "source_sha256"
-            }
-          }
-        },
-        {
-          "@type": "cr:Field",
-          "@id": "photoreal_episodes/complete_model_panel",
-          "name": "complete_model_panel",
-          "description": "complete model panel.",
-          "dataType": "sc:Integer",
-          "source": {
-            "fileObject": {
-              "@id": "data/photoreal_episodes.csv"
-            },
-            "extract": {
-              "column": "complete_model_panel"
-            }
-          }
-        }
-      ]
-    },
-    {
-      "@type": "cr:RecordSet",
-      "@id": "core_unpaired_episodes",
-      "name": "Valid core outcomes outside matched V/S/C triplets",
-      "description": "All valid core outcomes not included in matched triplets. Missing counterparts are not failures. These rows do not enter the paired core means.",
-      "field": [
-        {
-          "@type": "cr:Field",
-          "@id": "core_unpaired_episodes/record_id",
-          "name": "record_id",
-          "description": "record id.",
-          "dataType": "sc:Text",
-          "source": {
-            "fileObject": {
-              "@id": "data/core_unpaired_episodes.csv"
-            },
-            "extract": {
-              "column": "record_id"
-            }
-          }
-        },
-        {
-          "@type": "cr:Field",
-          "@id": "core_unpaired_episodes/task",
-          "name": "task",
-          "description": "task.",
-          "dataType": "sc:Text",
-          "source": {
-            "fileObject": {
-              "@id": "data/core_unpaired_episodes.csv"
-            },
-            "extract": {
-              "column": "task"
-            }
-          }
-        },
-        {
-          "@type": "cr:Field",
-          "@id": "core_unpaired_episodes/harness",
-          "name": "harness",
-          "description": "harness.",
-          "dataType": "sc:Text",
-          "source": {
-            "fileObject": {
-              "@id": "data/core_unpaired_episodes.csv"
-            },
-            "extract": {
-              "column": "harness"
-            }
-          }
-        },
-        {
-          "@type": "cr:Field",
-          "@id": "core_unpaired_episodes/condition",
-          "name": "condition",
-          "description": "condition.",
-          "dataType": "sc:Text",
-          "source": {
-            "fileObject": {
-              "@id": "data/core_unpaired_episodes.csv"
-            },
-            "extract": {
-              "column": "condition"
-            }
-          }
-        },
-        {
-          "@type": "cr:Field",
-          "@id": "core_unpaired_episodes/model",
-          "name": "model",
-          "description": "model.",
-          "dataType": "sc:Text",
-          "source": {
-            "fileObject": {
-              "@id": "data/core_unpaired_episodes.csv"
-            },
-            "extract": {
-              "column": "model"
-            }
-          }
-        },
-        {
-          "@type": "cr:Field",
-          "@id": "core_unpaired_episodes/seed",
-          "name": "seed",
-          "description": "seed.",
-          "dataType": "sc:Integer",
-          "source": {
-            "fileObject": {
-              "@id": "data/core_unpaired_episodes.csv"
-            },
-            "extract": {
-              "column": "seed"
-            }
-          }
-        },
-        {
-          "@type": "cr:Field",
-          "@id": "core_unpaired_episodes/success",
-          "name": "success",
-          "description": "success.",
-          "dataType": "sc:Integer",
-          "source": {
-            "fileObject": {
-              "@id": "data/core_unpaired_episodes.csv"
-            },
-            "extract": {
-              "column": "success"
-            }
-          }
-        },
-        {
-          "@type": "cr:Field",
-          "@id": "core_unpaired_episodes/rounds",
-          "name": "rounds",
-          "description": "rounds.",
-          "dataType": "sc:Integer",
-          "source": {
-            "fileObject": {
-              "@id": "data/core_unpaired_episodes.csv"
-            },
-            "extract": {
-              "column": "rounds"
-            }
-          }
-        },
-        {
-          "@type": "cr:Field",
-          "@id": "core_unpaired_episodes/run_timestamp",
-          "name": "run_timestamp",
-          "description": "run timestamp.",
-          "dataType": "sc:Text",
-          "source": {
-            "fileObject": {
-              "@id": "data/core_unpaired_episodes.csv"
-            },
-            "extract": {
-              "column": "run_timestamp"
-            }
-          }
-        },
-        {
-          "@type": "cr:Field",
-          "@id": "core_unpaired_episodes/source_sha256",
-          "name": "source_sha256",
-          "description": "source sha256.",
-          "dataType": "sc:Text",
-          "source": {
-            "fileObject": {
-              "@id": "data/core_unpaired_episodes.csv"
-            },
-            "extract": {
-              "column": "source_sha256"
+              "column": "source_revision"
             }
           }
         }
