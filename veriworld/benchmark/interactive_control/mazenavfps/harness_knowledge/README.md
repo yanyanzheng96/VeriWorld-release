@@ -23,7 +23,7 @@ plus its own narrative history. Both are harness-maintained,
 deterministic, 1 LLM call per step.
 
 Ported from
-`AxisWorld-benchmark/unreal_projects_lean/veriworld/harness_win/
+`VeriWorld-benchmark/unreal_projects_lean/veriworld/harness_win/
 parallel_harness.py::KnowledgeManager`.
 
 ## State memory

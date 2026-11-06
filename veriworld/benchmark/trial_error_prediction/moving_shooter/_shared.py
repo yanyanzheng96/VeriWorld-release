@@ -1,6 +1,6 @@
 """Shared UE code + helpers for moving_shooter harnesses.
 
-Translates AxisWorld's setup.py / clean.py / tick_runner.py into
+Translates VeriWorld's setup.py / clean.py / tick_runner.py into
 ``python_exec``-ready code strings, and adds harness-side utilities:
 parsing the agent's response, harvesting the recorded video, reading
 ``round_log.txt`` produced by the tick runner.
@@ -154,7 +154,7 @@ def setup_scene_code(params: dict) -> str:
         # dynamic material instance. Runtime HLSL compilation
         # (CreateMaterialFromCodeAndWait) crashes cooked builds
         # ("uncooked shader map ID in a cooked application"), which is
-        # why the AxisWorld-era code cannot run against the packaged
+        # why the VeriWorld-era code cannot run against the packaged
         # binary. Colors keep the original scheme: gray pillar, blue
         # target, green arm, red projectile.
         "_base_mat = ur.StaticLoadObject(\n"

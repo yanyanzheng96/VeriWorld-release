@@ -20,7 +20,7 @@ Recording / screenshot capture is handled by each harness's
 ``_common.py`` (the modality difference).
 
 Adapted from the chaos debug script
-``AxisWorld-benchmark/.../navigation/debug/chaos/billiards/01_billiards_basic.py``.
+``VeriWorld-benchmark/.../navigation/debug/chaos/billiards/01_billiards_basic.py``.
 """
 
 from __future__ import annotations

@@ -228,7 +228,7 @@ the exact action subset and variant scope. No API credentials are included.
 ## Licensing and citation
 
 The project license and notices are retained in [LICENSE](LICENSE) and
-[NOTICE.md](NOTICE.md). [DISTRIBUTION_CHANNEL.txt](DISTRIBUTION_CHANNEL.txt)
+[NOTICE.md](NOTICE.md). The license is the PolyForm Noncommercial License 1.0.0: use is limited to noncommercial purposes and **commercial use is prohibited** (see NOTICE.md Section 2). [DISTRIBUTION_CHANNEL.txt](DISTRIBUTION_CHANNEL.txt)
 records the owner-authorized GitHub release channel. Unreal Engine and
 third-party content retain their own terms; the project license does not
 grant ownership of or supersede terms for third-party material.

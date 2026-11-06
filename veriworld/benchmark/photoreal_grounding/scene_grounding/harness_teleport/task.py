@@ -4,7 +4,7 @@ relative-step actions (variable distance per round).
 Despite the legacy "teleport" directory name, this harness no longer
 exposes absolute set_pose. The agent picks the step length each round
 based on the visual feedback — same pattern as
-``harness_win_tunnel`` in the AxisWorld benchmark.
+``harness_win_tunnel`` in the VeriWorld benchmark.
 
 Per round:
   - Show target screenshot + current screenshot + current pose

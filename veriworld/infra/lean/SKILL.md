@@ -91,7 +91,7 @@ Each Lean-verified task's `lean_verify/` ships (at minimum):
 
 ## References (private R&D tree — useful to mine patterns from)
 
-- `AxisWorld-benchmark/unreal_projects_lean/lean/unit_tests/12c_drop_to_target/lean_verify/DropToTarget.lean`
+- `VeriWorld-benchmark/unreal_projects_lean/lean/unit_tests/12c_drop_to_target/lean_verify/DropToTarget.lean`
   — full Lean-proved task: `DropParams` struct, `canSolve` predicate,
   `landingDistance` / `findTiltAngle` oracle, `verify` judge,
   seed → `generateInstance` deterministic generator.

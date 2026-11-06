@@ -19,7 +19,7 @@ RNG sequence, same JSON keys, same values) so existing seed-0 params
 hash matches.
 
 Ported/adapted from
-``AxisWorld-benchmark/.../navigation/debug/chaos/billiards/01_billiards_basic.py``.
+``VeriWorld-benchmark/.../navigation/debug/chaos/billiards/01_billiards_basic.py``.
 """
 
 from __future__ import annotations

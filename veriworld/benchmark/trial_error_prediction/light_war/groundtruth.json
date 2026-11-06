@@ -1,5 +1,5 @@
 {
-  "_doc": "lightwar arc-projectile grounding tasks. Coordinates in cm (UE units). Launch + target_xy adapted from AxisWorld-benchmark/.../lighting/_parabola_artillery_v2 — 463 m horizontal, 940 cm vertical drop from launch to hill base. Tolerance is 3-D distance from final landing point to the beacon's apex (tower top + light gap).",
+  "_doc": "lightwar arc-projectile grounding tasks. Coordinates in cm (UE units). Launch + target_xy adapted from VeriWorld-benchmark/.../lighting/_parabola_artillery_v2 — 463 m horizontal, 940 cm vertical drop from launch to hill base. Tolerance is 3-D distance from final landing point to the beacon's apex (tower top + light gap).",
 
   "scene_start_pose": {
     "_view": "launch site, gun-camera looking toward beacon",

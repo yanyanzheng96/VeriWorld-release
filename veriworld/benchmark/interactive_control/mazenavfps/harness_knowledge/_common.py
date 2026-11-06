@@ -329,7 +329,7 @@ class KnowledgeManager:
     self-reflect on its prior reasoning.
 
     Ported from
-    ``AxisWorld-benchmark/unreal_projects_lean/veriworld/harness_win/
+    ``VeriWorld-benchmark/unreal_projects_lean/veriworld/harness_win/
     parallel_harness.py::KnowledgeManager``. Deterministic — the
     harness just concatenates agent outputs, no extra LLM call.
 

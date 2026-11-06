@@ -142,7 +142,7 @@ tasks that want it.
 
 - Shipped shaders:
   - [`billiard_ball.slang`](../../benchmark/computational_physics/curvy_billiards/lean_verify/billiard_ball.slang)
-  - [`bouncy_ball.slang` / `math_surface.slang`](https://github.com/axisworld-team) (in the private R&D tree; not in public repo — the `billiard_ball` one in VeriWorld is representative).
+  - `bouncy_ball.slang` / `math_surface.slang` (in the private R&D tree; not in public repo — the `billiard_ball` one in VeriWorld is representative).
 
 - Templates:
   - [`examples/trivial_kernel.slang`](examples/trivial_kernel.slang) —

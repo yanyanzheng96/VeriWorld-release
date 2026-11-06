@@ -20,7 +20,7 @@ import os
 GRID_N = 40
 SPACING = 12.0
 BALL_R = 15.0
-BASE = "${HOME_PROJECTS}/AxisWorld-benchmark/unreal_projects_lean/lean/unit_tests/12c_drop_to_target"
+BASE = "${HOME_PROJECTS}/VeriWorld-benchmark/unreal_projects_lean/lean/unit_tests/12c_drop_to_target"
 # CRITICAL: SHADER_PATH must be an ABSOLUTE path — UE cannot find relative paths!
 SHADER_PATH = BASE + "/lean_verify/slide_ball.slang"
 LOG_PATH = BASE + "/lean_verify/log_for_verify.txt"

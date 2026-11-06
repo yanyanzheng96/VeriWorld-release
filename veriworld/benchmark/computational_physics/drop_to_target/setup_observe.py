@@ -6,7 +6,7 @@ import unreal_runtime as ur
 import json
 import os
 
-BASE = "${HOME_PROJECTS}/AxisWorld-benchmark/unreal_projects_lean/lean/unit_tests/12c_drop_to_target"
+BASE = "${HOME_PROJECTS}/VeriWorld-benchmark/unreal_projects_lean/lean/unit_tests/12c_drop_to_target"
 with open(os.path.join(BASE, "params.json"), "r") as f:
     params = json.load(f)
 

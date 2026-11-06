@@ -16,7 +16,7 @@ Conditions (hard-coded, no branching):
 
 The knowledge log is maintained by ``KnowledgeManager`` (in
 ``_common.py``) — deterministic Python, no extra LLM call.
-Ported from ``AxisWorld-benchmark/.../veriworld/harness_win/parallel_harness.py``.
+Ported from ``VeriWorld-benchmark/.../veriworld/harness_win/parallel_harness.py``.
 """
 
 from __future__ import annotations

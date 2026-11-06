@@ -1,5 +1,5 @@
 /-!
-# AxisWorld Unit Test 12b: Drop Ball to Target via Surface Deformation
+# VeriWorld Unit Test 12b: Drop Ball to Target via Surface Deformation
 
 ## Physics Model (simplified, for existence proof)
 

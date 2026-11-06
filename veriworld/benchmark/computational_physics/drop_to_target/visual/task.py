@@ -162,7 +162,7 @@ def _make_frame_grid(frame_paths: List[Path]) -> Optional[str]:
 # own workspace directory.
 # ---------------------------------------------------------------------------
 _LEGACY_BASE = (
-    'BASE = "${HOME_PROJECTS}/AxisWorld-benchmark/'
+    'BASE = "${HOME_PROJECTS}/VeriWorld-benchmark/'
     'unreal_projects_lean/lean/unit_tests/12c_drop_to_target"'
 )
 

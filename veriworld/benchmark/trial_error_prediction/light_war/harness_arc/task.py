@@ -923,7 +923,7 @@ async def run(
         json.dumps(summary, indent=2, default=str), encoding="utf-8")
 
     # Standalone knowledge.md so reviewers can read the agent's accumulated
-    # reasoning over the episode at a glance (matches the AxisWorld
+    # reasoning over the episode at a glance (matches the VeriWorld
     # harness_win convention).
     md_lines = [f"# Lightwar episode — {run_id}", ""]
     for e in knowledge_entries:

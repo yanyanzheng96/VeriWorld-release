@@ -224,7 +224,7 @@ def spawn_beacon_code(beacon: dict, ground_z: float) -> str:
     """Spawn (or refresh) a 'lighthouse' tower + PointLight at beacon XY.
     Idempotent — wipes any prior ``_LightwarBeacon_*`` actors first.
     Mirrors the proven beacon pattern from
-    ``AxisWorld-benchmark/.../lighting/spawn_beacon.py`` (uses
+    ``VeriWorld-benchmark/.../lighting/spawn_beacon.py`` (uses
     ``RuntimeglTFLibrary.LoadStaticMeshFromPath``,
     ``StaticLoadObject``, ``SpawnActorEx`` with a Transform — those are
     the runtime APIs that survive cooking with ``WITH_EDITOR=0``)."""

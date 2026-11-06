@@ -88,4 +88,4 @@ launch sequence covering all 4 active harnesses × 12 models × any
 seed range, on either difficulty.
 
 Scene code adapted from
-`AxisWorld-benchmark/.../navigation/debug/chaos/billiards/01_billiards_basic.py`.
+`VeriWorld-benchmark/.../navigation/debug/chaos/billiards/01_billiards_basic.py`.

@@ -99,8 +99,6 @@ Questions about the Unreal Engine packaged build, build installation issues, and
 
 **yan.zheng.mat@gmail.com**
 
-Access requests should be submitted through the request form linked in the repository (see `docs/ACCESS.md`), not by direct email.
-
 ### 6.2 Licensing, Copyright, and Legal Inquiries
 
 Commercial licensing inquiries, questions about the scope of permitted use, copyright notices, reports of suspected violations, and all other legal matters:

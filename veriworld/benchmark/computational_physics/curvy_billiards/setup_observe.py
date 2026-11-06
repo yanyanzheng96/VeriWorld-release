@@ -12,7 +12,7 @@ import os
 
 import unreal_runtime as ur
 
-BASE = "${HOME_PROJECTS}/AxisWorld-benchmark/unreal_projects_lean/lean/unit_tests/17_surface_billiards_hard"
+BASE = "${HOME_PROJECTS}/VeriWorld-benchmark/unreal_projects_lean/lean/unit_tests/17_surface_billiards_hard"
 with open(os.path.join(BASE, "params.json"), "r") as f:
     params = json.load(f)
 

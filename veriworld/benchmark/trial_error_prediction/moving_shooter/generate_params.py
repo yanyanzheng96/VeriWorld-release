@@ -12,7 +12,7 @@ Each seed generates:
     frame, so a model that solves the symbolic equations only and
     doesn't ground them visually will MISS
 
-Ported from AxisWorld unit_test 09e_moving_shooter_v2.
+Ported from VeriWorld unit_test 09e_moving_shooter_v2.
 """
 
 from __future__ import annotations

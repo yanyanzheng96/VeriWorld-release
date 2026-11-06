@@ -319,7 +319,7 @@ def _make_frame_grid(frame_entries: List[tuple[Path, str]]) -> Optional[str]:
 
 
 _LEGACY_BASE = (
-    'BASE = "${HOME_PROJECTS}/AxisWorld-benchmark/'
+    'BASE = "${HOME_PROJECTS}/VeriWorld-benchmark/'
     'unreal_projects_lean/lean/unit_tests/17_surface_billiards_hard"'
 )
 
