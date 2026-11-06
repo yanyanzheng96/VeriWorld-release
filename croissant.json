@@ -114,7 +114,7 @@
   "description": "Executable 3D test-task definitions, deterministic seed/parameter fixtures and public CLI recipes for VeriWorld. The dataset is not a collection of model-run results. The separately distributed VeriWorld binary and user-configured model API are required to execute tasks.",
   "url": "https://huggingface.co/datasets/yanyanzheng96/VeriWorld",
   "sameAs": "https://github.com/yanyanzheng96/VeriWorld-release",
-  "version": "1.1.0",
+  "version": "1.1.2",
   "datePublished": "2026-05-06",
   "dateModified": "2026-11-03T20:33:04.924464+00:00",
   "license": "https://huggingface.co/datasets/yanyanzheng96/VeriWorld/blob/main/LICENSE.md",

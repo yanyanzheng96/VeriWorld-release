@@ -24,7 +24,7 @@ Use outside this scope constitutes copyright infringement under applicable law.
 
 ### 2.1 Prohibited Commercial Uses
 
-The following uses of this software or its associated assets — including but not limited to the Unreal Engine packaged build distributed separately via access-gated Google Drive, and any dataset, scene, task parameter, rendered frame or video, verification log, simulation trace, shader output, or other output produced by or derived from them — are outside the scope of the license granted by the LICENSE, regardless of the identity, legal form, or affiliations of the user:
+The following uses of this software or its associated assets — including but not limited to the Unreal Engine packaged build distributed separately as a public GitHub Release, and any dataset, scene, task parameter, rendered frame or video, verification log, simulation trace, shader output, or other output produced by or derived from them — are outside the scope of the license granted by the LICENSE, regardless of the identity, legal form, or affiliations of the user:
 
 - **(i) Training and model improvement.** Use as training data, fine-tuning data, distillation target, reinforcement signal, evaluation signal feeding training, or any other input to the training, fine-tuning, alignment, or improvement of any commercial model, product, or service.
 
@@ -58,21 +58,13 @@ Unauthorized use described in Section 2.1 constitutes copyright infringement und
 
 ---
 
-## 3. Access-Gated Unreal Engine Build — No Redistribution
+## 3. Unreal Engine Packaged Build — Benchmark Use Only
 
-The Unreal Engine packaged build that accompanies this software is **not distributed through this repository**. It is made available only through an access-gated Google Drive channel, by individual access request, at the sole discretion of the licensor.
+The Unreal Engine packaged build that accompanies this software is **not distributed through this repository**. It is made available as a public GitHub Release at https://github.com/yanyanzheng96/VeriWorld-release, at the sole discretion of the licensor.
 
-Redistribution of the packaged build, in whole or in part, in any form, is outside the scope of the license. Prohibited redistribution includes, without limitation:
+The packaged build is provided solely to run and reproduce the VeriWorld benchmark tasks. Any use of the packaged build for a purpose other than running this benchmark — including the commercial uses described in Section 2.1, incorporating it or its contents into other software, models, or datasets, or extracting, repackaging, or redistributing its contents as a standalone artifact — is outside the scope of the license granted by the LICENSE.
 
-- Mirroring or re-hosting the build on any public or private server, file-sharing service, or content delivery network
-- Posting the build (or download links derived from a granted access session) to public forums, chat platforms, wikis, code-hosting sites, torrent networks, or peer-to-peer file-sharing networks
-- Transferring the build to any third party who has not themselves obtained access through the licensor's approved channel
-- Bundling the build with derivative works, papers, tutorials, or other materials distributed to third parties
-- Extracting, repackaging, or otherwise making the build's contents available outside the approved channel
-
-Access granted to an individual is personal to that individual (or to the named institution in the case of institutional requests) and is non-transferable.
-
-Unauthorized redistribution constitutes copyright infringement under applicable law and is subject to legal action, including claims for copyright infringement, breach of access terms, injunctive relief, damages, statutory damages where available, and attorneys' fees.
+Unauthorized use constitutes copyright infringement under applicable law and is subject to legal action, including claims for copyright infringement, injunctive relief, damages, statutory damages where available, and attorneys' fees.
 
 ---
 
@@ -82,7 +74,7 @@ The following activities, and any attempt to perform them, are outside the scope
 
 - Reverse engineering, decompilation, or disassembly of the software or the packaged build, in whole or in part
 - Extraction of source code, assets, shaders, models, levels, configuration, or any other component from the packaged build
-- Circumvention, removal, disabling, or tampering with any technical measure that controls access to, or protects, the software or the packaged build, including but not limited to access controls on the Google Drive distribution channel
+- Circumvention, removal, disabling, or tampering with any technical measure that controls access to, or protects, the software or the packaged build, including but not limited to the build's technical protection measures
 - Redistribution, public display, public performance, incorporation, or any other use of materials derived from any of the foregoing activities
 
 These prohibitions apply regardless of whether the activity is performed directly by the user, by an agent or contractor acting on the user's behalf, or by automated tooling under the user's direction or control.
@@ -103,9 +95,9 @@ Nothing in this NOTICE waives any right or remedy available to the licensor unde
 
 ### 6.1 Access Requests and Operational Support
 
-Requests for access to the access-gated Unreal Engine packaged build, questions about the access-request form, build installation issues, and other operational matters:
+Questions about the Unreal Engine packaged build, build installation issues, and other operational matters:
 
-**axisworld.team@gmail.com**
+**yan.zheng.mat@gmail.com**
 
 Access requests should be submitted through the request form linked in the repository (see `docs/ACCESS.md`), not by direct email.
 

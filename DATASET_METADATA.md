@@ -11,7 +11,7 @@ The versioned task source and Windows/Linux runtime are available from
 | --- | ---: | --- |
 | `task_catalog` | 11 | A task-family definition, objective, verifier/metric, and source path |
 | `seed_fixtures` | 90 | A reference generator configuration and its initialization parameters |
-| `runtime_recipes` | 22 | A representative public CLI command for installation checking |
+| `runtime_recipes` | 29 | A representative public CLI command for installation checking |
 
 These counts measure different things and must not be added to count scenes or
 experiments. Fixtures cover eight task families; LightWar, SceneGrounding and
