@@ -116,7 +116,7 @@
   "sameAs": "https://github.com/yanyanzheng96/VeriWorld-release",
   "version": "1.1.2",
   "datePublished": "2026-05-06",
-  "dateModified": "2026-11-03T20:33:04.924464+00:00",
+  "dateModified": "2026-11-03T20:33:04.925344+00:00",
   "license": "https://huggingface.co/datasets/yanyanzheng96/VeriWorld/blob/main/LICENSE.md",
   "isLiveDataset": false,
   "keywords": [
@@ -132,7 +132,7 @@
       "@id": "https://huggingface.co/datasets/yanyanzheng96/VeriWorld/resolve/c2e91ddba815b394db165518311d8d092ec2463f/metadata/release_seed_fixtures.json"
     },
     {
-      "@id": "https://raw.githubusercontent.com/yanyanzheng96/VeriWorld-release/789103cd64c556febd6937809dddac99fd686064/task_entrypoints.json"
+      "@id": "https://raw.githubusercontent.com/VITA-Group/VeriWorld/paper-artifacts-2026-11-06-rc3/task_entrypoints.json"
     }
   ],
   "prov:wasGeneratedBy": [
@@ -143,10 +143,10 @@
       "description": "Task objectives, verifier metrics and source paths describe the pinned release implementation. Recipes document representative one-round public CLI installation checks; no model outcome is used as a task definition.",
       "prov:used": [
         {
-          "@id": "https://github.com/yanyanzheng96/VeriWorld-release/tree/789103cd64c556febd6937809dddac99fd686064"
+          "@id": "https://github.com/VITA-Group/VeriWorld/tree/paper-artifacts-2026-11-06-rc3"
         },
         {
-          "@id": "https://raw.githubusercontent.com/yanyanzheng96/VeriWorld-release/789103cd64c556febd6937809dddac99fd686064/run_task.py"
+          "@id": "https://raw.githubusercontent.com/VITA-Group/VeriWorld/paper-artifacts-2026-11-06-rc3/run_task.py"
         }
       ]
     },
@@ -160,7 +160,7 @@
           "@id": "https://huggingface.co/datasets/yanyanzheng96/VeriWorld/resolve/c2e91ddba815b394db165518311d8d092ec2463f/metadata/release_seed_fixtures.json"
         },
         {
-          "@id": "https://github.com/yanyanzheng96/VeriWorld-release/tree/789103cd64c556febd6937809dddac99fd686064"
+          "@id": "https://github.com/VITA-Group/VeriWorld/tree/paper-artifacts-2026-11-06-rc3"
         }
       ]
     }
@@ -194,7 +194,7 @@
       "contentUrl": "https://huggingface.co/datasets/yanyanzheng96/VeriWorld/resolve/c2e91ddba815b394db165518311d8d092ec2463f/data/seed_fixtures.csv",
       "encodingFormat": "text/csv",
       "sha256": "8ed0f7c8eb1e5331cf92ec137c609f1665d5f0a5d885346b5f279136b64666b5",
-      "license": "https://github.com/yanyanzheng96/VeriWorld-release/blob/789103cd64c556febd6937809dddac99fd686064/LICENSE"
+      "license": "https://github.com/VITA-Group/VeriWorld/blob/paper-artifacts-2026-11-06-rc3/LICENSE"
     },
     {
       "@type": "cr:FileObject",
@@ -204,7 +204,7 @@
       "contentUrl": "https://huggingface.co/datasets/yanyanzheng96/VeriWorld/resolve/c2e91ddba815b394db165518311d8d092ec2463f/data/runtime_recipes.csv",
       "encodingFormat": "text/csv",
       "sha256": "2afa327ba765155889873900f1bed32d1b2e5b266d8278a801621046dda895c6",
-      "license": "https://github.com/yanyanzheng96/VeriWorld-release/blob/789103cd64c556febd6937809dddac99fd686064/LICENSE"
+      "license": "https://github.com/VITA-Group/VeriWorld/blob/paper-artifacts-2026-11-06-rc3/LICENSE"
     }
   ],
   "recordSet": [
@@ -297,7 +297,7 @@
       "@id": "seed_fixtures",
       "name": "seed_fixtures",
       "description": "Ninety reference initialization configurations across eight task families. Parameter JSON includes evaluation-side references, not additional visual-only model input. Not experimental outcomes.",
-      "license": "https://github.com/yanyanzheng96/VeriWorld-release/blob/789103cd64c556febd6937809dddac99fd686064/LICENSE",
+      "license": "https://github.com/VITA-Group/VeriWorld/blob/paper-artifacts-2026-11-06-rc3/LICENSE",
       "field": [
         {
           "@type": "cr:Field",
@@ -471,7 +471,7 @@
       "@id": "runtime_recipes",
       "name": "runtime_recipes",
       "description": "Twenty-two example CLI commands spanning eleven task families. These are installation instructions with task-specific interfaces, not independent scenes or scores.",
-      "license": "https://github.com/yanyanzheng96/VeriWorld-release/blob/789103cd64c556febd6937809dddac99fd686064/LICENSE",
+      "license": "https://github.com/VITA-Group/VeriWorld/blob/paper-artifacts-2026-11-06-rc3/LICENSE",
       "field": [
         {
           "@type": "cr:Field",
