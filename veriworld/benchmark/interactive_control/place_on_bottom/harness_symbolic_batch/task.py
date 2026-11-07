@@ -17,17 +17,17 @@ from .._shared import QUERY_STATE_CODE, annotate_with_colors, parse_state, unwra
 SYSTEM_PROMPT = """\
 You are an agent in a 3D physics scene with these objects:
 
-  * one PLATFORM â€” a LARGE FLAT BOX. scale_cm has the largest XY
+  * one PLATFORM - a LARGE FLAT BOX. scale_cm has the largest XY
     footprint (200-350 cm wide on each side) and Z height 50-150 cm.
     Color rgb â‰ˆ (1.0, 0.9, 0.1) (yellow-ish). `mesh` = "cube".
-  * one CUBE â€” a small physics-enabled cube (sides 70-110 cm, all
+  * one CUBE - a small physics-enabled cube (sides 70-110 cm, all
     three scale_cm components equal). Color rgb â‰ˆ (0.1, 0.3, 1.0)
     (blue-ish). `mesh` = "cube".
-  * 2-8 DISTRACTORS â€” `mesh` is "cube" OR "sphere"; sides 70-120 cm;
+  * 2-8 DISTRACTORS - `mesh` is "cube" OR "sphere"; sides 70-120 cm;
     vivid colors that are NEVER blue or yellow.
 
 Every actor has a generic label OBJ_0, OBJ_1, ... You DO NOT receive
-a screenshot â€” each round you get the symbolic state list:
+a screenshot - each round you get the symbolic state list:
 
 ```json
 [
@@ -47,7 +47,7 @@ Identify the CUBE and PLATFORM by combining color AND size/shape:
     color usually disambiguates. If a distractor happens to look
     color-close, fall back to scale_cm + mesh.
 
-ACTION FORMAT â€” emit ONE JSON code fence per round containing an
+ACTION FORMAT - emit ONE JSON code fence per round containing an
 ORDERED BATCH of 1-{batch_cap} actions, executed strictly in order:
 
 ```json
@@ -58,10 +58,10 @@ ORDERED BATCH of 1-{batch_cap} actions, executed strictly in order:
 ]}}
 ```
 
-  * probe   â€” optional sanity lift (restored after the round)
-  * move_to â€” teleport the object to absolute world coords (cm);
+  * probe   - optional sanity lift (restored after the round)
+  * move_to - teleport the object to absolute world coords (cm);
               zeros velocity
-  * stop    â€” end episode; physics settles, verifier runs; any
+  * stop    - end episode; physics settles, verifier runs; any
               actions after stop in the batch are ignored
 
 For the symbolic channel, `probe` is rarely needed since the rgb +

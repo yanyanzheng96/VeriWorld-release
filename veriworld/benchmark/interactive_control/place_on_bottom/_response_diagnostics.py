@@ -3,7 +3,7 @@ def vlm_call_info(vlm) -> dict:
 
     A response cut off at the token limit and a response that is simply
     badly formatted are indistinguishable once ``finish_reason`` has
-    been discarded â€” which is how the 2026-07-25 truncations were
+    been discarded - which is how the 2026-07-25 truncations were
     misread as reasoning failures. Returns ``{}`` for backends that do
     not report it. Lives here (not in a per-arm ``task.py``) so every
     harness arm records the same fields.
@@ -18,7 +18,7 @@ def vlm_call_info(vlm) -> dict:
                   "parts": getattr(vlm, "last_part_count", 0)}
     usage = getattr(vlm, "last_usage", None)
     # gemini-direct hands back an SDK object, the OpenAI-compatible
-    # transport a plain dict â€” read both, and keep whichever token
+    # transport a plain dict - read both, and keep whichever token
     # counters that backend happens to report.
     for attr in ("prompt_token_count", "candidates_token_count",
                  "thoughts_token_count", "total_token_count",

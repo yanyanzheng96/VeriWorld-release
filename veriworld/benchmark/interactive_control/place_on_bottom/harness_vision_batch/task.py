@@ -19,13 +19,13 @@ from .._shared import QUERY_STATE_CODE, parse_state, unwrap
 SYSTEM_PROMPT = """\
 You are an agent in a 3D physics scene. There is exactly:
 
-  * one PLATFORM â€” a LARGE FLAT BOX. Footprint roughly 200-350 cm on
+  * one PLATFORM - a LARGE FLAT BOX. Footprint roughly 200-350 cm on
     each side, height 50-150 cm. Color is yellow-ish (rgb â‰ˆ 1.0, 0.9,
     0.1). It is the widest, flattest object in the scene.
-  * one CUBE â€” a small physics-enabled cube (equal sides 70-110 cm).
+  * one CUBE - a small physics-enabled cube (equal sides 70-110 cm).
     Color is blue-ish (rgb â‰ˆ 0.1, 0.3, 1.0). It starts on the ground
     off to the side of the platform.
-  * 2-8 DISTRACTOR objects â€” random CUBE OR SPHERE primitives,
+  * 2-8 DISTRACTOR objects - random CUBE OR SPHERE primitives,
     side/diameter 70-120 cm, vivid colors (red, green, magenta, cyan,
     orange, purple, pink, chartreuse, etc.). NONE of them are blue or
     yellow.
@@ -33,7 +33,7 @@ You are an agent in a 3D physics scene. There is exactly:
 Each round you receive:
   * a SCREENSHOT of the current scene
   * an ANONYMOUS state list of every OBJ_i with its world position
-    and scale_cm. The list does NOT include color or mesh type â€” you
+    and scale_cm. The list does NOT include color or mesh type - you
     must figure out which OBJ_i is the cube / platform / each
     distractor by matching the visual scene to the position +
     scale_cm entries.
@@ -61,7 +61,7 @@ Use the position + scale_cm for exact placement math:
 Then teleport the cube onto the platform so it settles within
 tolerance.
 
-ACTION FORMAT â€” emit ONE JSON code fence per round containing an
+ACTION FORMAT - emit ONE JSON code fence per round containing an
 ORDERED BATCH of 1-{batch_cap} actions, executed strictly in order:
 
 ```json
@@ -72,12 +72,12 @@ ORDERED BATCH of 1-{batch_cap} actions, executed strictly in order:
 ]}}
 ```
 
-  * probe   â€” lifts the object by 200 cm so the round's closing
+  * probe   - lifts the object by 200 cm so the round's closing
               screenshot reveals which physical box it is; the
               harness restores it after the screenshot
-  * move_to â€” teleport the object to absolute world coords (cm);
+  * move_to - teleport the object to absolute world coords (cm);
               zeros velocity
-  * stop    â€” end episode; physics settles, verifier runs; any
+  * stop    - end episode; physics settles, verifier runs; any
               actions after stop in the batch are ignored
 
 You have {max_rounds} rounds and a TOTAL budget of

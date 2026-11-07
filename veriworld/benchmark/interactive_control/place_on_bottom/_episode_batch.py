@@ -139,7 +139,7 @@ async def run_episode_batch(
             raise RuntimeError("Required current image is missing; episode is unscored")
         if len(obs_meta.get("state", [])) != params["n_total_objects"]:
             raise RuntimeError("Incomplete runtime scene state; episode is unscored")
-        tail = (f"**Round {round_idx}/{max_rounds}** â€” action budget: "
+        tail = (f"**Round {round_idx}/{max_rounds}** - action budget: "
                 f"{remaining} of {max_total_actions} actions remaining.\n\n"
                 f"Emit ONE JSON fence: {{\"actions\": [ ... ]}} with 1-"
                 f"{min(batch_cap, remaining)} actions (probe / move_to / stop), "
@@ -232,7 +232,7 @@ async def run_episode_batch(
     log.info("settling physics + verifying ...")
     verdict = await settle_and_verify(engine, params)
     result = "PASS" if verdict.get("passed") else "FAIL"
-    log.info("%s â€” %s (%s)", run_id, result, verdict.get("reason"))
+    log.info("%s - %s (%s)", run_id, result, verdict.get("reason"))
 
     summary = {
         "run_id": run_id, "model": vlm.model, "seed": seed,
