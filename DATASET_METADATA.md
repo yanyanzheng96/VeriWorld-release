@@ -72,7 +72,3 @@ CC0 declaration; this includes the original `task_catalog.csv` view. Unreal
 Engine and third-party runtime content retain their own terms. Consult the
 artifact-specific license notice, rather than treating the entire distribution
 as CC0. A metadata validation result does not certify asset redistribution rights.
-
-## DropToTarget canonical task instances
-
-The paper's DropToTarget results use the reference-validated task instances in `veriworld/benchmark/computational_physics/paper_tasks/drop/seed{0,1,2}/params.json` (surface_z 395.0 / 440.0 / 387.0), published in the code repository (https://github.com/VITA-Group/VeriWorld). The deterministic generator fixtures with the same seed numbers in `seed_fixtures` (fixtures 084-086, surface_z 476.7 / 370.2 / 493.4) are a separate instance set and were not the parameters behind the paper's DropToTarget numbers. Reproduce the paper's DropToTarget with the paper_tasks instances.

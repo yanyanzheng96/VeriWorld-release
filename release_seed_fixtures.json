@@ -13388,81 +13388,81 @@
       "seed": 0,
       "generator": "veriworld.benchmark.computational_physics.paper_tasks.drop.generate_params",
       "config": {},
-      "parameters_sha256": "e60a460655491ec5bbf2c0879bb7db28ebcccb17d5f5c453d624932c608e3663",
+      "parameters_sha256": "ee3e399b4d8bf999a9422b2ec5d2080a2fd7cff7f8f469b6197e06c0cf2e24ca",
       "parameters": {
         "seed": 0,
-        "surface_z": 476.7,
+        "surface_z": 395.0,
         "ball_start": [
           0.0,
           0.0,
-          501.7
+          420.0
         ],
         "target": [
-          11.7,
-          -233.8,
+          -312.4857,
+          -89.318,
           15.0
         ],
-        "target_radius": 50.4,
+        "target_radius": 44.0,
         "grid_n": 40,
         "grid_spacing": 12.0,
         "ball_radius": 15.0
       },
       "deterministic": true,
-      "generator_sha256": "c567f6119438cc801a9d65470c3b558eb2b0e5c630ba5f57ec003a87d3c595fc"
+      "generator_sha256": "6389a53d4f42dc2d232e1a830fb487aaab6e57e6ee5d6cddc6d2192d1e05f841"
     },
     {
       "task": "DropToTarget",
       "seed": 1,
       "generator": "veriworld.benchmark.computational_physics.paper_tasks.drop.generate_params",
       "config": {},
-      "parameters_sha256": "4a16b9fcd6fd9e86c221b863c303afae9b96c9eb33760ef5c742d1633739afdc",
+      "parameters_sha256": "a283a0104bfceab366dd7e7c0f0fb8e77eb84b8a3bb1b8d73c9e6b7a24ca968e",
       "parameters": {
         "seed": 1,
-        "surface_z": 370.2,
+        "surface_z": 440.0,
         "ball_start": [
           0.0,
           0.0,
-          395.2
+          465.0
         ],
         "target": [
-          174.0,
-          -247.8,
+          206.1141,
+          -110.7836,
           15.0
         ],
-        "target_radius": 50.2,
+        "target_radius": 61.0,
         "grid_n": 40,
         "grid_spacing": 12.0,
         "ball_radius": 15.0
       },
       "deterministic": true,
-      "generator_sha256": "c567f6119438cc801a9d65470c3b558eb2b0e5c630ba5f57ec003a87d3c595fc"
+      "generator_sha256": "6389a53d4f42dc2d232e1a830fb487aaab6e57e6ee5d6cddc6d2192d1e05f841"
     },
     {
       "task": "DropToTarget",
       "seed": 2,
       "generator": "veriworld.benchmark.computational_physics.paper_tasks.drop.generate_params",
       "config": {},
-      "parameters_sha256": "15d424baa8234a2c2885bcfb21c3f86bf479ffeea47a71f6edb71e64de584ef1",
+      "parameters_sha256": "2d49ab758697ba969124349c69cb9a42f319910d16b94ebaf67d35819de27c63",
       "parameters": {
         "seed": 2,
-        "surface_z": 493.4,
+        "surface_z": 387.0,
         "ball_start": [
           0.0,
           0.0,
-          518.4
+          412.0
         ],
         "target": [
-          152.7,
-          -51.9,
+          3.7031,
+          342.98,
           15.0
         ],
-        "target_radius": 43.4,
+        "target_radius": 78.0,
         "grid_n": 40,
         "grid_spacing": 12.0,
         "ball_radius": 15.0
       },
       "deterministic": true,
-      "generator_sha256": "c567f6119438cc801a9d65470c3b558eb2b0e5c630ba5f57ec003a87d3c595fc"
+      "generator_sha256": "6389a53d4f42dc2d232e1a830fb487aaab6e57e6ee5d6cddc6d2192d1e05f841"
     },
     {
       "task": "CurvyBilliards",
