@@ -114,9 +114,9 @@
   "description": "Executable 3D test-task definitions, deterministic seed/parameter fixtures and public CLI recipes for VeriWorld. The dataset is not a collection of model-run results. The separately distributed VeriWorld binary and user-configured model API are required to execute tasks.",
   "url": "https://huggingface.co/datasets/yanyanzheng96/VeriWorld",
   "sameAs": "https://github.com/VITA-Group/VeriWorld",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "datePublished": "2026-05-06",
-  "dateModified": "2026-11-07T04:04:06.959853+00:00",
+  "dateModified": "2026-11-07T09:39:04.605682+00:00",
   "license": "https://huggingface.co/datasets/yanyanzheng96/VeriWorld/blob/main/LICENSE.md",
   "isLiveDataset": false,
   "keywords": [
@@ -166,7 +166,7 @@
     }
   ],
   "rai:dataCollection": "Synthetic task initialization produced by the versioned VeriWorld generators and documented live UE scenes. The catalogue records executable objectives and runtime metrics. No human subjects or scraped personal data were used to generate task instances.",
-  "rai:dataCollectionTimeframe": "This metadata describes the paper-artifacts-2026-11-03-rc1 source/runtime snapshot. Metadata revision date is not an experiment collection date.",
+  "rai:dataCollectionTimeframe": "This metadata describes the paper-artifacts-2026-11-06-rc3 task source with the paper-artifacts-2026-11-03-rc1 runtime binary. Metadata revision date is not an experiment collection date.",
   "rai:dataPreprocessingProtocol": "Reference task/seed/generator configurations are serialized to CSV with parameter objects stored as JSON strings and source/parameter SHA256 digests preserved. Runtime recipes are documentation, not trial outcomes. No experimental success/failure records are included in these three record sets.",
   "rai:dataAnnotationProtocol": "Task objectives and metrics are documented from the released implementation. Reference quantities come from deterministic generators or the live engine state. Execution outcomes are computed by the task verifier; no crowd or model judge labels the fixture dataset.",
   "rai:dataLimitations": "Eleven task families are documented. Ninety offline fixtures cover eight families; LightWar and photoreal grounding use live runtime/scene configuration. The fixtures are not exhaustive seed coverage. Legacy TunnelNav3D uses fixed construction seed 99 for rendered tunnel waypoints. This synthetic task release does not establish real-world performance, safety, cross-platform score equivalence or universal model API availability.",
@@ -193,7 +193,7 @@
       "description": "Ninety reference initialization configurations across eight task families. Parameter JSON includes evaluation-side references, not additional visual-only model input. Not experimental outcomes.",
       "contentUrl": "https://huggingface.co/datasets/yanyanzheng96/VeriWorld/resolve/main/data/seed_fixtures.csv",
       "encodingFormat": "text/csv",
-      "sha256": "e1e82f31bf33f29cd550d17a8ea52bfbcca5b75829340b613e37f43406c16fda",
+      "sha256": "7cf15c6f0d94d7d796fed4ea78a8535f5d5bdf52f54a5cda8b3ceb3c576a5529",
       "license": "https://github.com/VITA-Group/VeriWorld/blob/paper-artifacts-2026-11-06-rc3/LICENSE"
     },
     {

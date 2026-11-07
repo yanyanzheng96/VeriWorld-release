@@ -50,7 +50,7 @@ are not included. Later API services can change or become unavailable.
 
 ## Provenance and metadata version
 
-The task/source release remains `paper-artifacts-2026-11-03-rc1`.
+The task/source release is `paper-artifacts-2026-11-06-rc3`.
 Croissant metadata version `1.1.0` (revision
 `paper-artifacts-2026-11-03-rc1-task-metadata2`) updates descriptions only:
 the CSV bytes, initialization parameters, code and runtime archives are unchanged.
