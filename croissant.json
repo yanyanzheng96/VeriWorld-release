@@ -113,10 +113,10 @@
   "name": "VeriWorld task dataset",
   "description": "Executable 3D test-task definitions, deterministic seed/parameter fixtures and public CLI recipes for VeriWorld. The dataset is not a collection of model-run results. The separately distributed VeriWorld binary and user-configured model API are required to execute tasks.",
   "url": "https://huggingface.co/datasets/yanyanzheng96/VeriWorld",
-  "sameAs": "https://github.com/yanyanzheng96/VeriWorld-release",
+  "sameAs": "https://github.com/VITA-Group/VeriWorld",
   "version": "1.1.2",
   "datePublished": "2026-05-06",
-  "dateModified": "2026-11-03T20:33:04.925344+00:00",
+  "dateModified": "2026-11-07T04:04:06.959853+00:00",
   "license": "https://huggingface.co/datasets/yanyanzheng96/VeriWorld/blob/main/LICENSE.md",
   "isLiveDataset": false,
   "keywords": [
@@ -129,7 +129,7 @@
   ],
   "prov:wasDerivedFrom": [
     {
-      "@id": "https://huggingface.co/datasets/yanyanzheng96/VeriWorld/resolve/c2e91ddba815b394db165518311d8d092ec2463f/metadata/release_seed_fixtures.json"
+      "@id": "https://huggingface.co/datasets/yanyanzheng96/VeriWorld/resolve/main/metadata/release_seed_fixtures.json"
     },
     {
       "@id": "https://raw.githubusercontent.com/VITA-Group/VeriWorld/paper-artifacts-2026-11-06-rc3/task_entrypoints.json"
@@ -157,7 +157,7 @@
       "description": "The released generators produce parameter objects from task-specific seeds and configuration. Each fixture retains generator identity, source hash, parameter hash and JSON values. CSV columns preserve these objects as JSON strings. No rendering or model inference is required to read a fixture; model actions are not fixture labels.",
       "prov:used": [
         {
-          "@id": "https://huggingface.co/datasets/yanyanzheng96/VeriWorld/resolve/c2e91ddba815b394db165518311d8d092ec2463f/metadata/release_seed_fixtures.json"
+          "@id": "https://huggingface.co/datasets/yanyanzheng96/VeriWorld/resolve/main/metadata/release_seed_fixtures.json"
         },
         {
           "@id": "https://github.com/VITA-Group/VeriWorld/tree/paper-artifacts-2026-11-06-rc3"
@@ -181,7 +181,7 @@
       "@id": "data/task_catalog.csv",
       "name": "data/task_catalog.csv",
       "description": "Eleven executable task-family definitions, including objectives, verifier metrics and source paths. Not model-run records.",
-      "contentUrl": "https://huggingface.co/datasets/yanyanzheng96/VeriWorld/resolve/c2e91ddba815b394db165518311d8d092ec2463f/data/task_catalog.csv",
+      "contentUrl": "https://huggingface.co/datasets/yanyanzheng96/VeriWorld/resolve/main/data/task_catalog.csv",
       "encodingFormat": "text/csv",
       "sha256": "ec30302664ece3c23a618537ab7aa82138ba16ea7165e43c343babb32e0ce995",
       "license": "https://creativecommons.org/publicdomain/zero/1.0/"
@@ -191,19 +191,19 @@
       "@id": "data/seed_fixtures.csv",
       "name": "data/seed_fixtures.csv",
       "description": "Ninety reference initialization configurations across eight task families. Parameter JSON includes evaluation-side references, not additional visual-only model input. Not experimental outcomes.",
-      "contentUrl": "https://huggingface.co/datasets/yanyanzheng96/VeriWorld/resolve/c2e91ddba815b394db165518311d8d092ec2463f/data/seed_fixtures.csv",
+      "contentUrl": "https://huggingface.co/datasets/yanyanzheng96/VeriWorld/resolve/main/data/seed_fixtures.csv",
       "encodingFormat": "text/csv",
-      "sha256": "8ed0f7c8eb1e5331cf92ec137c609f1665d5f0a5d885346b5f279136b64666b5",
+      "sha256": "e1e82f31bf33f29cd550d17a8ea52bfbcca5b75829340b613e37f43406c16fda",
       "license": "https://github.com/VITA-Group/VeriWorld/blob/paper-artifacts-2026-11-06-rc3/LICENSE"
     },
     {
       "@type": "cr:FileObject",
       "@id": "data/runtime_recipes.csv",
       "name": "data/runtime_recipes.csv",
-      "description": "Twenty-two example CLI commands spanning eleven task families. These are installation instructions with task-specific interfaces, not independent scenes or scores.",
-      "contentUrl": "https://huggingface.co/datasets/yanyanzheng96/VeriWorld/resolve/c2e91ddba815b394db165518311d8d092ec2463f/data/runtime_recipes.csv",
+      "description": "Twenty-nine example CLI commands spanning eleven task families. These are installation instructions with task-specific interfaces, not independent scenes or scores.",
+      "contentUrl": "https://huggingface.co/datasets/yanyanzheng96/VeriWorld/resolve/main/data/runtime_recipes.csv",
       "encodingFormat": "text/csv",
-      "sha256": "2afa327ba765155889873900f1bed32d1b2e5b266d8278a801621046dda895c6",
+      "sha256": "7a19e3875acf6d023ac70937aff285156c219bee3514262feda558b4b33d1459",
       "license": "https://github.com/VITA-Group/VeriWorld/blob/paper-artifacts-2026-11-06-rc3/LICENSE"
     }
   ],
@@ -470,7 +470,7 @@
       "@type": "cr:RecordSet",
       "@id": "runtime_recipes",
       "name": "runtime_recipes",
-      "description": "Twenty-two example CLI commands spanning eleven task families. These are installation instructions with task-specific interfaces, not independent scenes or scores.",
+      "description": "Twenty-nine example CLI commands spanning eleven task families. These are installation instructions with task-specific interfaces, not independent scenes or scores.",
       "license": "https://github.com/VITA-Group/VeriWorld/blob/paper-artifacts-2026-11-06-rc3/LICENSE",
       "field": [
         {
@@ -522,7 +522,7 @@
           "@type": "cr:Field",
           "@id": "runtime_recipes/information_condition",
           "name": "information_condition",
-          "description": "Information interface used by this example; VP and RP are not relabeled V/S/C.",
+          "description": "Information interface used by this example; VP and RP are not relabeled V/S/C. For PlaceOnBottom, V also supplies anonymous object identifiers with current positions and sizes; the separate pure-visual (V-pure) condition supplies the image and identifiers only.",
           "dataType": "sc:Text",
           "source": {
             "fileObject": {
